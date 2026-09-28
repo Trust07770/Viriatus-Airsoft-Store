@@ -1,0 +1,1204 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<title>Viriatus Airsoft Store</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --bg:#FFFFFF; --surface:#FFFFFF; --surface-2:#F4F4F4; --ink:#111111; --muted:#6A6A6A; --line:#E4E4E4;
+  --img-bg:#FFFFFF;
+  --red:#D71920; --red-hover:#B8141A; --red-ink:#FFFFFF; --red-soft:#FBE8E8;
+  --head:#0E0E0E; --head-2:#1A1A1A; --head-ink:#FFFFFF; --head-muted:#A8A8A8; --head-line:#2A2A2A;
+  --ok:#1F7A35; --ok-bg:#E3F3E6; --warn:#9A5B00; --warn-bg:#FFF3DC; --bad:#C0161D; --bad-bg:#FBE4E4;
+  --shadow:0 2px 14px rgba(0,0,0,.08);
+  --display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  --sans:"Barlow",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:ui-monospace,Menlo,Consolas,monospace;
+  --r:4px;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#0B0B0B; --surface:#151515; --surface-2:#1E1E1E; --ink:#F2F2F2; --muted:#9C9C9C; --line:#2B2B2B;
+    --img-bg:#FFFFFF; --red:#E5252C; --red-hover:#F2464C; --red-ink:#FFFFFF; --red-soft:#3A1416;
+    --head:#000000; --head-2:#111111; --head-line:#262626;
+    --ok:#6FCB84; --ok-bg:#15291A; --warn:#E7AE55; --warn-bg:#2E2412; --bad:#F2676B; --bad-bg:#361618;
+    --shadow:0 2px 14px rgba(0,0,0,.5);
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#0B0B0B; --surface:#151515; --surface-2:#1E1E1E; --ink:#F2F2F2; --muted:#9C9C9C; --line:#2B2B2B;
+  --img-bg:#FFFFFF; --red:#E5252C; --red-hover:#F2464C; --red-ink:#FFFFFF; --red-soft:#3A1416;
+  --head:#000000; --head-2:#111111; --head-line:#262626;
+  --ok:#6FCB84; --ok-bg:#15291A; --warn:#E7AE55; --warn-bg:#2E2412; --bad:#F2676B; --bad-bg:#361618;
+  --shadow:0 2px 14px rgba(0,0,0,.5);
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:16px/1.55 var(--sans);-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--display);font-weight:700;line-height:1.05;margin:0;text-wrap:balance;letter-spacing:.01em}
+p{margin:0}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.wrap{max-width:1240px;margin:0 auto;padding-inline:16px}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.eyebrow{font:600 12.5px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+
+.strip{background:var(--red);color:#fff;font-size:13px;font-weight:500}
+.strip .wrap{display:flex;gap:6px 24px;flex-wrap:wrap;justify-content:space-between;padding-block:6px}
+.strip b{font-weight:700}
+header.top{background:var(--head);color:var(--head-ink);position:sticky;top:env(safe-area-inset-top,0px);z-index:30}
+.top .row{display:flex;align-items:center;gap:14px;padding-block:12px}
+.logo{display:flex;align-items:center;gap:10px;background:none;border:0;padding:0;color:inherit;text-align:left}
+.logo-mark{width:36px;height:36px;flex:none}
+.logo-name{display:block;font:700 24px/0.95 var(--display);text-transform:uppercase;letter-spacing:.03em}
+.logo-sub{display:block;font:500 11px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--head-muted);margin-top:4px}
+.search{flex:1;display:flex;max-width:520px;margin-inline:auto}
+.search input{flex:1;min-width:0;background:#fff;border:0;color:#111;padding:10px 12px;border-radius:var(--r) 0 0 var(--r)}
+.search input::placeholder{color:#8a8a8a}
+.search button{background:var(--red);color:#fff;border:0;padding:0 16px;border-radius:0 var(--r) var(--r) 0;font-weight:600}
+.hbtn{display:flex;align-items:center;gap:8px;background:none;border:1px solid transparent;color:var(--head-ink);padding:8px 10px;border-radius:var(--r);font-weight:500;white-space:nowrap}
+.hbtn:hover{border-color:var(--head-line)}
+.hbtn svg{width:20px;height:20px}
+.badge{background:var(--red);color:#fff;font:700 11px/1 var(--sans);padding:3px 6px;border-radius:10px;min-width:18px;text-align:center}
+nav.cats{background:var(--head);border-top:1px solid var(--head-line)}
+nav.cats .wrap{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none}
+nav.cats .wrap::-webkit-scrollbar{display:none}
+nav.cats button{background:none;border:0;color:var(--head-ink);font:600 16px/1 var(--display);text-transform:uppercase;letter-spacing:.06em;padding:12px 12px;white-space:nowrap;border-bottom:3px solid transparent}
+nav.cats button:hover,nav.cats button[aria-current="true"]{border-bottom-color:var(--red)}
+@media (max-width:760px){
+  .top .row{flex-wrap:wrap}
+  .search{order:3;flex-basis:100%;max-width:none}
+  .hbtn .lbl{display:none}
+  .strip .hide-sm{display:none}
+}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid transparent;border-radius:var(--r);padding:11px 18px;font-weight:600;line-height:1.2;text-decoration:none}
+.btn svg{width:18px;height:18px}
+.btn-primary{background:var(--red);color:var(--red-ink)}
+.btn-primary:hover{background:var(--red-hover)}
+.btn-ghost{background:transparent;border-color:var(--line);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--ink)}
+.btn-danger{background:transparent;border-color:var(--bad);color:var(--bad)}
+.btn-danger.armed{background:var(--bad);color:#fff}
+.btn-sm{padding:6px 10px;font-size:14px}
+.btn[disabled]{opacity:.5;cursor:not-allowed}
+.linkbtn{background:none;border:0;padding:0;color:var(--red);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+
+main{min-height:60vh;padding-block:28px 56px}
+
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center;border-bottom:1px solid var(--line);padding-bottom:28px}
+.hero-txt{display:flex;flex-direction:column;gap:16px}
+.hero h1{font-size:clamp(38px,5.4vw,64px);font-weight:700;text-transform:uppercase}
+.hero h1 em{font-style:normal;color:var(--red)}
+.hero p{color:var(--muted);max-width:46ch;font-size:17px}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap}
+.hero-img{background:var(--img-bg);border-radius:6px;aspect-ratio:4/3;max-width:100%;display:grid;place-items:center;overflow:hidden;border:0;padding:0;position:relative}
+.hero-img img{width:100%;height:100%;object-fit:contain}
+.hero-video{background:#000}
+.hero-video .hero-logo{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:14px}
+.hero-video canvas,.hero-video video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.hero-img .cap{position:absolute;left:14px;bottom:12px;font:600 13px/1.3 var(--sans);color:#111;text-align:left}
+.hero-img .cap b{display:block;color:var(--red);font:700 22px/1 var(--display)}
+@media (max-width:820px){.hero{grid-template-columns:1fr}}
+
+.trust{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:22px}
+.trust div{display:flex;gap:12px;align-items:center}
+.trust svg{width:26px;height:26px;flex:none;color:var(--red)}
+.trust b{display:block;font-size:15px}
+.trust span{font-size:13.5px;color:var(--muted)}
+@media (max-width:820px){.trust{grid-template-columns:1fr 1fr}}
+@media (max-width:440px){.trust{grid-template-columns:1fr}}
+
+section.block{margin-top:44px}
+.block-head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin-bottom:16px}
+.block-head h2{font-size:32px;text-transform:uppercase}
+.block-head h2::after{content:"";display:block;width:40px;height:3px;background:var(--red);margin-top:6px}
+
+.cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.cat-photo{position:relative;display:block;border:0;padding:0;border-radius:6px;overflow:hidden;aspect-ratio:325/232;max-width:100%;background:#111}
+.cat-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .25s}
+.cat-photo:hover img{transform:scale(1.04)}
+.cat-photo::after{content:"";position:absolute;inset:0;border-bottom:4px solid transparent;transition:border-color .2s}
+.cat-photo:hover::after{border-bottom-color:var(--red)}
+.cat-photo .n{position:absolute;right:8px;bottom:8px;background:rgba(0,0,0,.7);color:#fff;font:600 12px/1 var(--sans);padding:5px 7px;border-radius:3px}
+.catimgs{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px}
+.catimgs .ci2{display:flex;flex-direction:column;gap:6px;font-size:14px}
+.catimgs .th2{position:relative;aspect-ratio:325/232;max-width:100%;border-radius:4px;overflow:hidden;background:var(--surface-2)}
+.catimgs .th2 img{width:100%;height:100%;object-fit:cover}
+.catimgs label.up{font-size:13px;color:var(--red);font-weight:600;cursor:pointer;text-decoration:underline}
+.catimgs label.up input{display:none}
+.cat-tile{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:0;text-align:left;display:flex;flex-direction:column;overflow:hidden;transition:border-color .15s}
+.cat-tile:hover{border-color:var(--red)}
+.cat-tile .ci{display:block;width:100%;background:var(--img-bg);aspect-ratio:16/10;max-width:100%;position:relative}
+.cat-tile .ci img{width:100%;height:100%;object-fit:contain;padding:6px}
+.cat-tile .ct{display:block;padding:10px 12px}
+.cat-tile b{display:block;font:700 19px/1 var(--display);text-transform:uppercase;letter-spacing:.03em}
+.cat-tile span{font-size:13px;color:var(--muted)}
+@media (max-width:900px){.cat-grid{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:700px){.cat-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.cat-grid{grid-template-columns:repeat(2,1fr)}}
+
+.club{display:grid;grid-template-columns:auto 1fr auto;gap:20px;align-items:center;background:var(--head);color:var(--head-ink);border-radius:6px;padding:22px 24px;border-left:5px solid var(--red)}
+.club h2{font-size:28px;text-transform:uppercase}
+.club p{color:var(--head-muted);max-width:60ch}
+.club svg{width:52px;height:52px;color:var(--red)}
+.club .btn-ghost{color:var(--head-ink);border-color:var(--head-line)}
+@media (max-width:700px){.club{grid-template-columns:1fr}}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:6px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .15s}
+.card:hover{box-shadow:var(--shadow)}
+.card .img{position:relative;aspect-ratio:4/3;max-width:100%;background:var(--img-bg);border:0;padding:0;display:block;width:100%}
+.card .img img{width:100%;height:100%;object-fit:contain;display:block;padding:8px}
+.tags{position:absolute;left:8px;top:8px;display:flex;gap:4px;flex-wrap:wrap}
+.tag{font:700 11px/1 var(--sans);letter-spacing:.06em;text-transform:uppercase;padding:5px 7px;border-radius:3px;background:#111;color:#fff}
+.tag.promo{background:var(--red)}
+.joule{position:absolute;right:8px;bottom:8px;font:600 12px/1 var(--mono);background:#fff;color:#111;border:1px solid #ddd;padding:4px 6px;border-radius:3px}
+.card .body{padding:12px 14px 14px;display:flex;flex-direction:column;gap:5px;flex:1;border-top:1px solid var(--line)}
+.card .brand{font:600 12px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.card .name{background:none;border:0;padding:0;text-align:left;font-weight:600;font-size:16px;line-height:1.3}
+.card .name:hover{color:var(--red)}
+.card .foot{margin-top:auto;display:flex;align-items:end;justify-content:space-between;gap:8px;padding-top:8px}
+.price{font:700 26px/1 var(--display)}
+.price small{font:400 14px/1 var(--sans);color:var(--muted);text-decoration:line-through;margin-left:6px}
+.price.promo{color:var(--red)}
+.stock{font-size:13px;display:inline-flex;align-items:center;gap:6px}
+.stock::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+.stock.ok{color:var(--ok)} .stock.low{color:var(--warn)} .stock.out{color:var(--bad)}
+.addbtn{width:40px;height:40px;border-radius:var(--r);border:0;background:var(--red);color:#fff;display:grid;place-items:center;flex:none}
+.addbtn:hover{background:var(--red-hover)}
+.addbtn[disabled]{background:var(--line);color:var(--muted);cursor:not-allowed}
+.addbtn svg{width:20px;height:20px}
+
+.ph{position:absolute;inset:0;display:grid;place-items:center;overflow:hidden;color:#9a9a9a}
+.ph svg{position:absolute;inset:0;width:100%;height:100%;opacity:.35}
+.ph span{position:relative;font:700 28px/1 var(--display);text-transform:uppercase;letter-spacing:.06em}
+
+.catalog{display:grid;grid-template-columns:240px 1fr;gap:24px;align-items:start}
+.filters{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:16px;display:flex;flex-direction:column;gap:18px;position:sticky;top:130px}
+.filters h3{font-size:19px;text-transform:uppercase;letter-spacing:.04em}
+.fgroup{display:flex;flex-direction:column;gap:6px}
+.fgroup label.chk{display:flex;gap:8px;align-items:center;font-size:15px;cursor:pointer}
+.fgroup label.chk span{margin-left:auto;color:var(--muted);font-size:12.5px}
+input[type=checkbox],input[type=radio]{accent-color:var(--red)}
+.field{display:flex;flex-direction:column;gap:5px}
+.field > span{font-size:14px;font-weight:600}
+.input,select.input,textarea.input{width:100%;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:9px 11px}
+textarea.input{resize:vertical;min-height:110px;line-height:1.5}
+.input:focus{border-color:var(--ink);outline:none}
+.cat-head{display:flex;justify-content:space-between;align-items:end;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.cat-head h1{font-size:42px;text-transform:uppercase}
+.crumbs{font-size:13.5px;color:var(--muted);display:flex;gap:6px;flex-wrap:wrap;margin-bottom:6px}
+.crumbs button{background:none;border:0;padding:0;color:var(--muted);text-decoration:underline;text-underline-offset:2px}
+.empty{background:var(--surface);border:1px dashed var(--line);border-radius:6px;padding:40px 20px;text-align:center;color:var(--muted)}
+details.fmobile{display:none}
+@media (max-width:820px){
+  .catalog{grid-template-columns:1fr}
+  .filters{position:static}
+  .filters.desk{display:none}
+  details.fmobile{display:block;margin-bottom:14px}
+  details.fmobile summary{cursor:pointer;font-weight:600;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:10px 14px}
+  details.fmobile .filters{margin-top:8px}
+}
+
+.pdp{display:grid;grid-template-columns:1.1fr 1fr;gap:32px;align-items:start}
+.gallery .main{position:relative;aspect-ratio:4/3;max-width:100%;background:var(--img-bg);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.gallery .main img{width:100%;height:100%;object-fit:contain;padding:16px}
+.thumbs{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.thumbs button{width:72px;height:56px;border:1px solid var(--line);border-radius:4px;background:var(--img-bg);padding:3px}
+.thumbs button[aria-current="true"]{border-color:var(--red);border-width:2px}
+.thumbs img{width:100%;height:100%;object-fit:contain}
+.pdp h1{font-size:clamp(32px,4vw,44px);margin:6px 0 10px}
+.pdp .price{font-size:42px}
+.buybox{border-top:1px solid var(--line);padding-top:18px;display:flex;flex-direction:column;gap:14px;margin-top:16px}
+.qty{display:inline-flex;border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.qty button{width:38px;background:var(--surface-2);border:0;font-size:18px}
+.qty input{width:48px;text-align:center;border:0;background:var(--surface);padding:8px 0}
+.legal{display:flex;gap:10px;background:var(--surface-2);border-left:3px solid var(--red);color:var(--ink);border-radius:4px;padding:10px 12px;font-size:14px}
+.legal svg{width:20px;height:20px;flex:none;color:var(--red);margin-top:1px}
+.tabs{display:flex;gap:4px;border-bottom:1px solid var(--line);margin-top:36px}
+.tabs button{background:none;border:0;border-bottom:3px solid transparent;padding:10px 14px;font:700 18px/1 var(--display);text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--red)}
+.tabpanel{padding-block:18px;max-width:75ch}
+.desc{white-space:pre-line}
+table.specs{width:100%;border-collapse:collapse;font-size:15px}
+table.specs th,table.specs td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line)}
+table.specs th{width:40%;font-weight:500;color:var(--muted)}
+table.specs td{font-weight:600}
+@media (max-width:820px){.pdp{grid-template-columns:1fr}}
+
+.scrim{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:50}
+aside.drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);background:var(--surface);z-index:51;display:flex;flex-direction:column;box-shadow:var(--shadow);padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.drawer-head{display:flex;justify-content:space-between;align-items:center;padding:16px 18px;border-bottom:1px solid var(--line)}
+.drawer-head h2{font-size:26px;text-transform:uppercase}
+.xbtn{background:none;border:0;font-size:26px;line-height:1;padding:4px 8px;color:var(--muted)}
+.drawer-body{flex:1;overflow:auto;padding:8px 18px}
+.line{display:grid;grid-template-columns:64px 1fr auto;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);align-items:center}
+.line .th{position:relative;width:64px;height:52px;background:var(--img-bg);border-radius:4px;overflow:hidden}
+.line .th img{width:100%;height:100%;object-fit:contain}
+.line .th .ph span{font-size:12px}
+.line .nm{font-weight:600;font-size:15px;line-height:1.3}
+.line .ctl{display:flex;gap:8px;align-items:center;margin-top:6px}
+.line .qty button{width:28px}
+.line .qty input{width:34px;padding:4px 0}
+.drawer-foot{border-top:1px solid var(--line);padding:16px 18px;display:flex;flex-direction:column;gap:8px}
+.sumrow{display:flex;justify-content:space-between;font-size:15px}
+.sumrow.total{font:700 24px/1.2 var(--display);padding-top:6px;border-top:1px solid var(--line);margin-top:4px}
+.progress{height:6px;background:var(--surface-2);border-radius:3px;overflow:hidden}
+.progress i{display:block;height:100%;background:var(--red)}
+.hint{font-size:13.5px;color:var(--muted)}
+
+.checkout{display:grid;grid-template-columns:1.4fr 1fr;gap:28px;align-items:start}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:20px}
+.panel h2{font-size:24px;text-transform:uppercase;margin-bottom:14px}
+.panel + .panel{margin-top:16px}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.fgrid .full{grid-column:1/-1}
+@media (max-width:620px){.fgrid{grid-template-columns:1fr}}
+.opts{display:grid;gap:8px}
+.opt{display:flex;gap:10px;align-items:flex-start;border:1px solid var(--line);border-radius:4px;padding:11px 12px;cursor:pointer}
+.opt:has(input:checked){border-color:var(--red)}
+.opt input{margin-top:4px}
+.opt b{display:block;font-size:15px}
+.opt small{color:var(--muted);font-size:13px}
+.err{color:var(--bad);font-size:14px}
+.notice{border-radius:4px;padding:10px 12px;font-size:14px;background:var(--red-soft);border-left:3px solid var(--red)}
+@media (max-width:900px){.checkout{grid-template-columns:1fr}}
+.confirm{max-width:640px;margin:0 auto;text-align:center;display:flex;flex-direction:column;gap:14px;align-items:center}
+.confirm h1{font-size:44px;text-transform:uppercase}
+.payref{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:18px 22px;display:grid;grid-template-columns:auto auto;gap:6px 24px;text-align:left}
+.payref dt{color:var(--muted);font-size:14px}
+.payref dd{margin:0;font:600 16px/1.4 var(--mono)}
+
+.admin-head{display:flex;justify-content:space-between;align-items:end;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+.admin-head h1{font-size:42px;text-transform:uppercase}
+.atabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:18px}
+.atabs button{border:1px solid var(--line);background:var(--surface);border-radius:20px;padding:7px 14px;font-weight:600;font-size:14.5px}
+.atabs button[aria-selected="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.tablewrap{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:6px}
+table.list{width:100%;border-collapse:collapse;font-size:15px;min-width:720px}
+table.list th{text-align:left;font:600 12px/1 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:12px;border-bottom:1px solid var(--line);background:var(--surface-2)}
+table.list td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:middle}
+table.list tr:last-child td{border-bottom:0}
+table.list .num{text-align:right;font-variant-numeric:tabular-nums}
+.mini{position:relative;width:52px;height:40px;background:var(--img-bg);border-radius:4px;overflow:hidden}
+.mini img{width:100%;height:100%;object-fit:contain}
+.mini .ph span{font-size:10px}
+.stockin{width:72px;text-align:right;padding:6px 8px}
+.pill{display:inline-block;font:600 12.5px/1 var(--sans);padding:5px 8px;border-radius:12px}
+.pill.on{background:var(--ok-bg);color:var(--ok)} .pill.off{background:var(--surface-2);color:var(--muted)}
+.st-Pendente{background:var(--warn-bg);color:var(--warn)} .st-Paga{background:var(--red-soft);color:var(--red)}
+.st-Enviada{background:var(--ok-bg);color:var(--ok)} .st-Concluída{background:var(--surface-2);color:var(--ink)} .st-Cancelada{background:var(--bad-bg);color:var(--bad)}
+.editor{display:grid;grid-template-columns:1.5fr 1fr;gap:20px;align-items:start}
+@media (max-width:900px){.editor{grid-template-columns:1fr}}
+.imgs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.imgs .it{position:relative;aspect-ratio:1;max-width:100%;border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--img-bg)}
+.imgs .it img{width:100%;height:100%;object-fit:contain}
+.imgs .it .rm{position:absolute;top:4px;right:4px;background:#fff;color:#111;border:1px solid #ddd;border-radius:4px;font-size:12px;padding:2px 6px}
+.imgs .it .first{position:absolute;left:4px;bottom:4px;font-size:11px;background:var(--red);color:#fff;padding:2px 5px;border-radius:3px}
+.drop{border:2px dashed var(--line);border-radius:6px;padding:16px;text-align:center;color:var(--muted);font-size:14px;cursor:pointer;display:block}
+.drop:hover{border-color:var(--red)}
+.drop input{display:none}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+.toolbar .input{max-width:320px}
+.order{background:var(--surface);border:1px solid var(--line);border-radius:6px;margin-bottom:10px}
+.order summary{display:grid;grid-template-columns:1.2fr 1.5fr 1fr auto;gap:12px;align-items:center;padding:12px 16px;cursor:pointer;list-style:none}
+.order summary::-webkit-details-marker{display:none}
+.order .od{padding:4px 16px 16px;display:grid;grid-template-columns:1fr 1fr;gap:16px;font-size:15px}
+@media (max-width:700px){.order summary{grid-template-columns:1fr auto}.order summary .hide-sm{display:none}.order .od{grid-template-columns:1fr}}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:4px 12px}
+.kv dt{color:var(--muted)} .kv dd{margin:0}
+
+footer.foot{background:var(--head);color:var(--head-muted);font-size:14px;border-top:3px solid var(--red)}
+footer.foot .wrap{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:28px;padding-block:36px}
+footer.foot h4{color:var(--head-ink);font-size:19px;text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px}
+footer.foot .legalline{grid-column:1/-1;border-top:1px solid var(--head-line);padding-top:16px;font-size:13px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+footer.foot a{color:var(--head-ink)}
+@media (max-width:760px){footer.foot .wrap{grid-template-columns:1fr}}
+
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:11px 18px;border-radius:4px;font-weight:500;z-index:60;box-shadow:var(--shadow);max-width:calc(100% - 32px)}
+.banner{background:var(--warn-bg);border-bottom:1px solid var(--line);font-size:14px}
+.banner .wrap{padding-block:9px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<div id="banner" class="banner" hidden><div class="wrap" id="bannerTxt"></div></div>
+<div class="strip"><div class="wrap">
+  <span id="stripShip">Portes grátis acima de 100 €</span>
+  <span class="hide-sm">Loja parceira do <b>Clube Airsoft Viriatus</b></span>
+  <span class="hide-sm">Réplicas só a <b>maiores de 18</b> com <b>cartão APD</b></span>
+  <span class="hide-sm" id="stripTel"></span>
+</div></div>
+<header class="top">
+  <div class="wrap row">
+    <button class="logo" data-act="home" aria-label="Página inicial">
+      <svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="6" fill="#D71920"/><circle cx="20" cy="20" r="10.5" fill="none" stroke="#fff" stroke-width="2.4"/><path d="M20 4v9M20 27v9M4 20h9M27 20h9" stroke="#fff" stroke-width="2.4"/><circle cx="20" cy="20" r="2.2" fill="#fff"/></svg>
+      <span><span class="logo-name" id="logoName">Viriatus Airsoft Store</span><span class="logo-sub" id="logoSub">Airsoft · Viseu</span></span>
+    </button>
+    <form class="search" id="searchForm" role="search">
+      <input id="q" type="search" placeholder="Procurar réplicas, BBs, equipamento…" aria-label="Procurar produtos">
+      <button type="submit" aria-label="Procurar">Procurar</button>
+    </form>
+    <button class="hbtn" id="themeBtn" data-act="theme" aria-label="Mudar entre fundo branco e preto">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 0 0 16z" fill="currentColor"/></svg><span class="lbl" id="themeLbl">Fundo preto</span>
+    </button>
+    <button class="hbtn" id="adminBtn" data-act="admin" hidden>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16M4 12h16M4 18h10"/><circle cx="18" cy="18" r="2.5"/></svg><span class="lbl">Gestão da loja</span>
+    </button>
+    <button class="hbtn" data-act="cart" aria-label="Carrinho">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 4h2.5l2.2 11h10.6L20.5 7H6.4"/><circle cx="9" cy="19.5" r="1.4"/><circle cx="17" cy="19.5" r="1.4"/></svg>
+      <span class="lbl">Carrinho</span><span class="badge" id="cartCount">0</span>
+    </button>
+  </div>
+  <nav class="cats" aria-label="Categorias"><div class="wrap" id="catNav"></div></nav>
+</header>
+
+<main class="wrap" id="main"></main>
+
+<footer class="foot"><div class="wrap" id="footer"></div></footer>
+
+<div id="cartLayer" hidden></div>
+<div id="toast" class="toast" role="status" hidden></div>
+
+<script src="dados.js"></script>
+<script>
+(() => {
+"use strict";
+/* ---------- Constantes ---------- */
+const DEFAULT_CFG = {
+  nome: "Viriatus Airsoft Store", slogan: "Airsoft · Viseu",
+  heroTitulo: "Equipa-te para o <em>próximo jogo</em>",
+  heroTexto: "Réplicas AEG, GBB e HPA, consumíveis e equipamento tático, com oficina própria para afinação e upgrades. Levantamento na loja ou envio para todo o país.",
+  telefone: "239 000 000", email: "geral@viriatusairsoft.pt",
+  morada: "Rua Exemplo, 100, 3500-000 Viseu", horario: "Seg–Sáb · 10h–19h",
+  portes: 5.9, portesGratis: 100, mbway: "910 000 000", iban: "PT50 0000 0000 0000 0000 0000 0",
+  categorias: ["AEG","GBB","Sniper","GBBR","Óticas","BBs","Gás","Coletes","M.O.L.L.E.","Baterias","Protecção","Fardas"],
+  catImagens: []
+};
+const CAT_DESC = {AEG:"Elétricas",Pistolas:"GBB, CO2, mola",GBBR:"Gás blowback",HPA:"Ar comprimido",Snipers:"Bolt-action",Shotguns:"Gás e mola",Consumíveis:"BBs, gás, baterias",Acessórios:"Miras, punhos, carregadores",Equipamento:"Coletes, proteção, roupa",Packs:"Kits prontos a jogar"};
+const REPLICA_CATS = ["AEG","GBB","GBBR","Sniper","HPA","Shotguns","Pistolas","Snipers"];
+const catImgId = k => ((S.cfg.catImagens||[]).find(x=>x.cat===k)||{}).id || "";
+const ESTADOS = ["Pendente","Paga","Enviada","Concluída","Cancelada"];
+const PAGAMENTOS = {
+  mbway:{t:"MB WAY",d:"Recebe o pedido de pagamento no telemóvel."},
+  multibanco:{t:"Referência Multibanco",d:"Paga numa caixa ATM ou no homebanking."},
+  transferencia:{t:"Transferência bancária",d:"A encomenda segue após confirmação do pagamento."},
+  loja:{t:"Pagar na loja",d:"Só com levantamento na loja."}
+};
+
+/* ---------- Estado ---------- */
+const S = {
+  db:null, assets:null, user:null, canAdmin:false, dbState:"a carregar",
+  produtos:[], encomendas:[], cfg:{...DEFAULT_CFG}, loaded:false,
+  view:"home", pid:null, img:0, tab:"desc", qty:1,
+  f:{cat:"", q:"", marcas:[], stock:false, promo:false, max:"", ordem:"novos"},
+  cart:loadCart(), cartOpen:false,
+  co:{entrega:"envio", pagamento:"mbway"}, coErr:"", lastOrder:null, busy:false,
+  aTab:"produtos", aq:"", edit:null, armed:null, oFilter:"", setErr:""
+};
+
+/* ---------- Utilidades ---------- */
+const $ = s => document.querySelector(s);
+const esc = v => String(v ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const eur = n => (Number(n)||0).toLocaleString("pt-PT",{style:"currency",currency:"EUR"});
+const num = v => { const n = parseFloat(String(v).replace(",", ".")); return isFinite(n) ? n : 0; };
+const MONTRA = window.__MONTRA__ || null;
+const imgSrc = id => !id ? "" : (MONTRA && MONTRA.img[id]) ? MONTRA.img[id] : "/_blob/" + id;
+const precoAtual = p => (p.precoPromo && p.precoPromo > 0 && p.precoPromo < p.preco) ? p.precoPromo : p.preco;
+const isReplica = p => p.replica ?? REPLICA_CATS.includes(p.categoria);
+const joules = p => { const s=(p.specs||[]).find(x=>/joule|energia/i.test(x.k)); return s ? s.v : ""; };
+function toast(msg){ const t=$("#toast"); t.textContent=msg; t.hidden=false; clearTimeout(toast._t); toast._t=setTimeout(()=>t.hidden=true,2600); }
+function loadCart(){ try{ return JSON.parse(localStorage.getItem(window.__MONTRA__?"cta_cart_demo":"cta_cart")||"[]"); }catch(e){ return []; } }
+function saveCart(){ try{ localStorage.setItem(window.__MONTRA__?"cta_cart_demo":"cta_cart", JSON.stringify(S.cart)); }catch(e){} updateCartCount(); }
+function prod(id){ return S.produtos.find(p=>p.id===id); }
+function visiveis(){ return S.produtos.filter(p=>p.ativo!==false); }
+function stockCls(p){ return p.stock<=0 ? "out" : p.stock<=3 ? "low" : "ok"; }
+function stockTxt(p){ return p.stock<=0 ? "Esgotado" : p.stock<=3 ? `Últimas ${p.stock} unid.` : "Em stock"; }
+
+function ph(cat){
+  return `<div class="ph" aria-hidden="true"><svg viewBox="0 0 200 150" preserveAspectRatio="xMidYMid slice"><g fill="none" stroke="currentColor" stroke-width="1"><circle cx="100" cy="75" r="44"/><circle cx="100" cy="75" r="22"/><path d="M100 15v40M100 95v40M40 75h40M120 75h40"/></g></svg><span>${esc(cat||"Produto")}</span></div>`;
+}
+function thumb(p){ return p.imagens && p.imagens[0] ? `<img src="${imgSrc(p.imagens[0])}" alt="${esc(p.nome)}" loading="lazy">` : ph(p.categoria); }
+
+/* ---------- Render geral ---------- */
+function render(){
+  renderChrome();
+  const m = $("#main");
+  if (S.view==="home") m.innerHTML = vHome();
+  else if (S.view==="cat") m.innerHTML = vCatalog();
+  else if (S.view==="prod") m.innerHTML = vProduct();
+  else if (S.view==="checkout") m.innerHTML = vCheckout();
+  else if (S.view==="ok") m.innerHTML = vConfirm();
+  else if (S.view==="admin") m.innerHTML = S.canAdmin ? vAdmin() : `<div class="empty">Esta área é só para quem gere a loja.</div>`;
+  if (S.view==="home") drawHero();
+  renderCart();
+}
+function renderChrome(){
+  const c=S.cfg;
+  $("#logoName").textContent = c.nome; $("#logoSub").textContent = c.slogan;
+  $("#stripShip").textContent = `Portes grátis acima de ${eur(c.portesGratis).replace(",00","")} · Envio 24–48h`;
+  $("#stripTel").textContent = `${c.telefone} · ${c.horario}`;
+  $("#adminBtn").hidden = !S.canAdmin;
+  $("#catNav").innerHTML = c.categorias.map(k=>`<button data-act="cat" data-cat="${esc(k)}" aria-current="${S.view==="cat"&&S.f.cat===k}">${esc(k)}</button>`).join("");
+  $("#footer").innerHTML = `
+    <div><h4>${esc(c.nome)}</h4><p>${esc(c.morada)}<br>${esc(c.horario)}<br>Tel. <span class="mono">${esc(c.telefone)}</span><br>${esc(c.email)}</p></div>
+    <div><h4>Comprar réplicas</h4><p>A venda de réplicas de airsoft é feita só a maiores de 18 anos, sócios de uma Associação Promotora Desportiva (APD) registada no IPDJ e na PSP. Pedimos o nº de sócio APD na encomenda e o cartão na entrega ou levantamento.</p></div>
+    <div><h4>Apoio</h4><p>Envios CTT para Portugal continental e ilhas.<br>Oficina: afinação de hop-up, upgrades e reparações.<br>Parceiros do <a href="https://www.facebook.com/p/Clube-Airsoft-Viriatus-61550786093331/" target="_blank" rel="noopener">Clube Airsoft Viriatus</a><br><a href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener">Livro de Reclamações</a></p></div>
+    <div class="legalline"><span>© ${new Date().getFullYear()} ${esc(c.nome)} · Réplicas de classe G, até 1,3 J (Lei n.º 5/2006)</span><span>Preços com IVA incluído</span></div>`;
+  updateCartCount();
+}
+function updateCartCount(){ $("#cartCount").textContent = S.cart.reduce((a,l)=>a+l.q,0); }
+
+/* ---------- Início ---------- */
+function vHome(){
+  const c=S.cfg, v=visiveis();
+  const dest = v.filter(p=>p.destaque).slice(0,8);
+  const nov = v.filter(p=>p.novidade).slice(0,8);
+  const promo = v.filter(p=>p.precoPromo>0 && p.precoPromo<p.preco).slice(0,4);
+  const count = k => v.filter(p=>p.categoria===k).length;
+  const hero = v.find(p=>p.destaque && p.imagens && p.imagens.length) || v.find(p=>p.imagens && p.imagens.length);
+  const catImg = k => { const p=v.find(x=>x.categoria===k && x.imagens && x.imagens.length); return p ? `<img src="${imgSrc(p.imagens[0])}" alt="" loading="lazy">` : ph(k); };
+  return `
+  <section class="hero">
+    <div class="hero-txt">
+      <span class="eyebrow">${esc(c.slogan)}</span>
+      <h1>${sanitizeHero(c.heroTitulo)}</h1>
+      <p>${esc(c.heroTexto)}</p>
+      <div class="hero-actions">
+        <button class="btn btn-primary" data-act="cat" data-cat="">Ver catálogo</button>
+        <button class="btn btn-ghost" data-act="cat" data-cat="AEG">Réplicas AEG</button>
+      </div>
+    </div>
+    <div class="hero-img hero-video">${c.heroImagem ? `<img class="hero-logo" src="${imgSrc(c.heroImagem)}" alt="${esc(c.nome)}">` : c.heroVideo ? `<video src="${imgSrc(c.heroVideo)}" autoplay muted loop playsinline aria-label="Vídeo de operações noturnas"></video>` : `<canvas id="heroCanvas" role="img" aria-label="Operadores em visão noturna com lasers infravermelhos"></canvas>`}</div>
+  </section>
+  <div class="trust">
+    <div>${ico("truck")}<p><b>Envio 24–48h</b><span>Grátis acima de ${eur(c.portesGratis).replace(",00","")}</span></p></div>
+    <div>${ico("wrench")}<p><b>Oficina própria</b><span>Afinação e upgrades</span></p></div>
+    <div>${ico("gauge")}<p><b>Testado ao cronógrafo</b><span>Todas até 1,3 J</span></p></div>
+    <div>${ico("card")}<p><b>MB WAY e Multibanco</b><span>Ou paga na loja</span></p></div>
+  </div>
+  <section class="block"><div class="block-head"><h2>Categorias</h2></div>
+    <div class="cat-grid">${c.categorias.map(k=>`${catImgId(k) ? `<button class="cat-photo" data-act="cat" data-cat="${esc(k)}" aria-label="${esc(k)}"><img src="${imgSrc(catImgId(k))}" alt="${esc(k)}" loading="lazy">${count(k)?`<span class="n">${count(k)} produto${count(k)>1?"s":""}</span>`:""}</button>` : `<button class="cat-tile" data-act="cat" data-cat="${esc(k)}"><span class="ci">${catImg(k)}</span><span class="ct"><b>${esc(k)}</b><span>${esc(CAT_DESC[k]||"")}${count(k)?` · ${count(k)}`:""}</span></span></button>`}`).join("")}</div>
+  </section>
+  ${!S.loaded ? `<section class="block"><div class="empty">A carregar produtos…</div></section>` : ""}
+  ${S.loaded && !v.length ? `<section class="block"><div class="empty">Ainda não há produtos. ${S.canAdmin?`<button class="linkbtn" data-act="admin-new">Adicionar o primeiro produto</button>`:""}</div></section>`:""}
+  ${promo.length ? block("Promoções", promo, "promo") : ""}
+  ${dest.length ? block("Destaques", dest) : ""}
+  <section class="block"><div class="club">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>
+    <div><h2>Clube Airsoft Viriatus</h2><p>Somos a loja parceira do clube de Viseu. Para comprar réplicas precisas de ser sócio de uma APD: fala connosco na loja e ajudamos-te a entrar no clube e a marcar o primeiro jogo.</p></div>
+    <a class="btn btn-ghost" href="https://www.facebook.com/p/Clube-Airsoft-Viriatus-61550786093331/" target="_blank" rel="noopener">Ver o clube</a>
+  </div></section>`;
+}
+function block(t, list, f){ return `<section class="block"><div class="block-head"><h2>${t}</h2><button class="linkbtn" data-act="cat" data-cat="" ${f?`data-promo="1"`:""}>Ver tudo</button></div><div class="grid">${list.map(card).join("")}</div></section>`; }
+function sanitizeHero(s){ return esc(s).replace(/&lt;em&gt;/g,"<em>").replace(/&lt;\/em&gt;/g,"</em>"); }
+function card(p){
+  const promo = p.precoPromo>0 && p.precoPromo<p.preco;
+  const j = joules(p);
+  return `<article class="card">
+    <button class="img" data-act="prod" data-id="${esc(p.id)}" aria-label="${esc(p.nome)}">${thumb(p)}
+      <span class="tags">${promo?`<span class="tag promo">-${Math.round((1-p.precoPromo/p.preco)*100)}%</span>`:""}${p.novidade?`<span class="tag novo">Novo</span>`:""}</span>
+      ${j?`<span class="joule">${esc(j)}</span>`:""}
+    </button>
+    <div class="body">
+      <span class="brand">${esc(p.marca)}</span>
+      <button class="name" data-act="prod" data-id="${esc(p.id)}">${esc(p.nome)}</button>
+      <span class="stock ${stockCls(p)}">${stockTxt(p)}</span>
+      <div class="foot">
+        <span class="price ${promo?"promo":""}">${eur(precoAtual(p))}${promo?`<small>${eur(p.preco)}</small>`:""}</span>
+        <button class="addbtn" data-act="add" data-id="${esc(p.id)}" ${p.stock<=0?"disabled":""} aria-label="Adicionar ao carrinho">${ico("plus")}</button>
+      </div>
+    </div></article>`;
+}
+
+/* ---------- Catálogo ---------- */
+function filtrar(){
+  const f=S.f, q=f.q.trim().toLowerCase();
+  let l = visiveis().filter(p=>
+    (!f.cat || p.categoria===f.cat) &&
+    (!q || [p.nome,p.marca,p.categoria,p.descricao].join(" ").toLowerCase().includes(q)) &&
+    (!f.marcas.length || f.marcas.includes(p.marca)) &&
+    (!f.stock || p.stock>0) &&
+    (!f.promo || (p.precoPromo>0 && p.precoPromo<p.preco)) &&
+    (!f.max || precoAtual(p) <= num(f.max)));
+  const o=f.ordem;
+  l.sort((a,b)=> o==="asc" ? precoAtual(a)-precoAtual(b) : o==="desc" ? precoAtual(b)-precoAtual(a) : o==="nome" ? a.nome.localeCompare(b.nome,"pt") : (b.criadoEm||0)-(a.criadoEm||0));
+  return l;
+}
+function filtersHTML(idp){
+  const base = visiveis().filter(p=>!S.f.cat || p.categoria===S.f.cat);
+  const marcas = [...new Set(base.map(p=>p.marca).filter(Boolean))].sort();
+  return `<div class="filters ${idp==="d"?"desk":""}">
+    <h3>Filtrar</h3>
+    <label class="field"><span>Categoria</span><select class="input" id="${idp}fcat" data-f="cat"><option value="">Todas</option>${S.cfg.categorias.map(k=>`<option ${S.f.cat===k?"selected":""}>${esc(k)}</option>`).join("")}</select></label>
+    ${marcas.length?`<div class="fgroup"><span class="eyebrow">Marca</span>${marcas.map(m=>`<label class="chk"><input type="checkbox" data-f="marca" value="${esc(m)}" ${S.f.marcas.includes(m)?"checked":""}> ${esc(m)} <span>${base.filter(p=>p.marca===m).length}</span></label>`).join("")}</div>`:""}
+    <label class="field"><span>Preço máximo (€)</span><input class="input" id="${idp}fmax" data-f="max" inputmode="decimal" value="${esc(S.f.max)}" placeholder="Sem limite"></label>
+    <div class="fgroup">
+      <label class="chk"><input type="checkbox" data-f="stock" ${S.f.stock?"checked":""}> Só em stock</label>
+      <label class="chk"><input type="checkbox" data-f="promo" ${S.f.promo?"checked":""}> Só promoções</label>
+    </div>
+    <button class="btn btn-ghost btn-sm" data-act="clear-f">Limpar filtros</button>
+  </div>`;
+}
+function vCatalog(){
+  const l = filtrar(), f=S.f;
+  const titulo = f.q ? `“${esc(f.q)}”` : (f.cat ? esc(f.cat) : "Catálogo");
+  return `<div class="crumbs"><button data-act="home">Início</button><span>/</span><span>${f.cat?esc(f.cat):"Catálogo"}</span></div>
+  <div class="cat-head"><h1>${titulo}</h1>
+    <label class="field" style="min-width:200px"><span class="eyebrow">${l.length} produto${l.length===1?"":"s"}</span>
+    <select class="input" id="ordem" data-f="ordem">
+      <option value="novos" ${f.ordem==="novos"?"selected":""}>Mais recentes</option>
+      <option value="asc" ${f.ordem==="asc"?"selected":""}>Preço: mais baixo</option>
+      <option value="desc" ${f.ordem==="desc"?"selected":""}>Preço: mais alto</option>
+      <option value="nome" ${f.ordem==="nome"?"selected":""}>Nome A–Z</option>
+    </select></label></div>
+  <details class="fmobile"><summary>Filtros</summary>${filtersHTML("m")}</details>
+  <div class="catalog">${filtersHTML("d")}
+    <div>${l.length ? `<div class="grid">${l.map(card).join("")}</div>` : `<div class="empty">Nenhum produto corresponde a estes filtros.</div>`}</div>
+  </div>`;
+}
+
+/* ---------- Produto ---------- */
+function vProduct(){
+  const p = prod(S.pid);
+  if (!p) return `<div class="empty">${S.loaded?"Este produto já não está disponível.":"A carregar…"} <button class="linkbtn" data-act="cat" data-cat="">Voltar ao catálogo</button></div>`;
+  const promo = p.precoPromo>0 && p.precoPromo<p.preco;
+  const imgs = p.imagens||[];
+  const i = Math.min(S.img, Math.max(0,imgs.length-1));
+  const rel = visiveis().filter(x=>x.categoria===p.categoria && x.id!==p.id).slice(0,4);
+  return `<div class="crumbs"><button data-act="home">Início</button><span>/</span><button data-act="cat" data-cat="${esc(p.categoria)}">${esc(p.categoria)}</button><span>/</span><span>${esc(p.nome)}</span></div>
+  <div class="pdp">
+    <div class="gallery">
+      <div class="main">${imgs.length?`<img src="${imgSrc(imgs[i])}" alt="${esc(p.nome)}">`:ph(p.categoria)}</div>
+      ${imgs.length>1?`<div class="thumbs">${imgs.map((id,k)=>`<button data-act="img" data-i="${k}" aria-current="${k===i}" aria-label="Imagem ${k+1}"><img src="${imgSrc(id)}" alt=""></button>`).join("")}</div>`:""}
+    </div>
+    <div>
+      <span class="eyebrow">${esc(p.marca)} · ${esc(p.categoria)}</span>
+      <h1>${esc(p.nome)}</h1>
+      ${p.ref?`<p class="muted mono" style="font-size:13px">Ref. ${esc(p.ref)}</p>`:""}
+      <div class="buybox">
+        <div style="display:flex;justify-content:space-between;align-items:end;gap:12px;flex-wrap:wrap">
+          <span class="price ${promo?"promo":""}">${eur(precoAtual(p))}${promo?`<small>${eur(p.preco)}</small>`:""}</span>
+          <span class="stock ${stockCls(p)}">${stockTxt(p)}</span>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <div class="qty"><button data-act="qty-" aria-label="Menos">−</button><input id="pqty" value="${S.qty}" inputmode="numeric" aria-label="Quantidade"><button data-act="qty+" aria-label="Mais">+</button></div>
+          <button class="btn btn-primary" style="flex:1" data-act="add" data-id="${esc(p.id)}" data-useqty="1" ${p.stock<=0?"disabled":""}>${p.stock<=0?"Esgotado":"Adicionar ao carrinho"}</button>
+        </div>
+        ${isReplica(p)?`<div class="legal">${ico("alert")}<span>Réplica de airsoft: venda só a maiores de 18 anos com nº de sócio de uma APD. Vais indicá-lo no checkout e mostrar o cartão na entrega.</span></div>`:""}
+        <p class="hint">Envio em 24–48h · Levantamento grátis na loja · Portes grátis acima de ${eur(S.cfg.portesGratis).replace(",00","")}</p>
+      </div>
+    </div>
+  </div>
+  <div class="tabs" role="tablist">
+    <button role="tab" data-act="tab" data-t="desc" aria-selected="${S.tab==="desc"}">Descrição</button>
+    <button role="tab" data-act="tab" data-t="specs" aria-selected="${S.tab==="specs"}">Especificações</button>
+  </div>
+  <div class="tabpanel">${S.tab==="desc" ? `<p class="desc">${esc(p.descricao||"Sem descrição.")}</p>` :
+    ((p.specs||[]).length ? `<table class="specs"><tbody>${p.specs.map(s=>`<tr><th>${esc(s.k)}</th><td>${esc(s.v)}</td></tr>`).join("")}</tbody></table>` : `<p class="muted">Sem especificações.</p>`)}</div>
+  ${rel.length?`<section class="block"><div class="block-head"><h2>Da mesma categoria</h2></div><div class="grid">${rel.map(card).join("")}</div></section>`:""}`;
+}
+
+/* ---------- Carrinho ---------- */
+function totais(){
+  const linhas = S.cart.map(l=>({...l, p:prod(l.id)})).filter(l=>l.p);
+  const sub = linhas.reduce((a,l)=>a+precoAtual(l.p)*l.q,0);
+  const envio = S.co.entrega==="loja" || sub===0 || sub>=S.cfg.portesGratis ? 0 : num(S.cfg.portes);
+  return {linhas, sub, envio, total: sub+envio};
+}
+function renderCart(){
+  const L = $("#cartLayer");
+  L.hidden = !S.cartOpen;
+  if (!S.cartOpen){ L.innerHTML=""; return; }
+  const t = totais(), falta = S.cfg.portesGratis - t.sub;
+  L.innerHTML = `<div class="scrim" data-act="cart-close"></div>
+  <aside class="drawer" role="dialog" aria-label="Carrinho">
+    <div class="drawer-head"><h2>Carrinho</h2><button class="xbtn" data-act="cart-close" aria-label="Fechar">×</button></div>
+    <div class="drawer-body">${t.linhas.length ? t.linhas.map(l=>`
+      <div class="line"><div class="th">${thumb(l.p)}</div>
+        <div><div class="nm">${esc(l.p.nome)}</div>
+          <div class="ctl"><div class="qty"><button data-act="cq-" data-id="${esc(l.id)}" aria-label="Menos">−</button><input value="${l.q}" readonly aria-label="Quantidade"><button data-act="cq+" data-id="${esc(l.id)}" aria-label="Mais">+</button></div>
+          <button class="linkbtn" style="font-size:13px" data-act="cq0" data-id="${esc(l.id)}">Remover</button></div></div>
+        <b class="mono">${eur(precoAtual(l.p)*l.q)}</b></div>`).join("") : `<p class="muted" style="padding:24px 0">O carrinho está vazio.</p>`}
+    </div>
+    ${t.linhas.length?`<div class="drawer-foot">
+      ${falta>0?`<p class="hint">Faltam <b>${eur(falta)}</b> para portes grátis</p><div class="progress"><i style="width:${Math.min(100,t.sub/S.cfg.portesGratis*100)}%"></i></div>`:`<p class="hint" style="color:var(--ok)">Tens portes grátis.</p>`}
+      <div class="sumrow"><span>Subtotal</span><span class="mono">${eur(t.sub)}</span></div>
+      <div class="sumrow"><span>Envio (CTT)</span><span class="mono">${t.envio?eur(t.envio):"Grátis"}</span></div>
+      <div class="sumrow total"><span>Total</span><span>${eur(t.total)}</span></div>
+      <button class="btn btn-primary" data-act="checkout">Finalizar encomenda</button>
+    </div>`:""}
+  </aside>`;
+}
+function addCart(id, q){
+  const p = prod(id); if(!p || p.stock<=0) return;
+  const l = S.cart.find(x=>x.id===id);
+  const cur = l ? l.q : 0, nq = Math.min(p.stock, cur+q);
+  if (nq===cur){ toast(`Só há ${p.stock} em stock.`); return; }
+  if (l) l.q = nq; else S.cart.push({id, q:nq});
+  saveCart(); toast(`${p.nome} adicionado ao carrinho.`);
+}
+
+/* ---------- Checkout ---------- */
+function vCheckout(){
+  const t = totais(), c=S.co;
+  if (!t.linhas.length) return `<div class="empty">O carrinho está vazio. <button class="linkbtn" data-act="cat" data-cat="">Ver catálogo</button></div>`;
+  const precisaAPD = t.linhas.some(l=>isReplica(l.p));
+  const v = k => esc(c[k]||"");
+  return `<div class="crumbs"><button data-act="home">Início</button><span>/</span><span>Finalizar encomenda</span></div>
+  <form class="checkout" id="coForm" novalidate>
+    <div>
+      <div class="panel"><h2>Os teus dados</h2><div class="fgrid">
+        <label class="field full"><span>Nome completo</span><input class="input" id="co-nome" data-co="nome" value="${v("nome")}" autocomplete="name"></label>
+        <label class="field"><span>Email</span><input class="input" id="co-email" data-co="email" type="email" value="${v("email")}" autocomplete="email"></label>
+        <label class="field"><span>Telemóvel</span><input class="input" id="co-tel" data-co="tel" inputmode="tel" value="${v("tel")}" placeholder="912 345 678" autocomplete="tel"></label>
+        <label class="field"><span>NIF (opcional)</span><input class="input" id="co-nif" data-co="nif" inputmode="numeric" value="${v("nif")}" placeholder="Para a fatura"></label>
+      </div></div>
+      ${precisaAPD?`<div class="panel"><h2>Associação (APD)</h2>
+        <div class="legal" style="margin-bottom:12px">${ico("alert")}<span>A encomenda tem réplicas. Por lei, só podemos vendê-las a maiores de 18 anos, sócios de uma APD registada no IPDJ e na PSP.</span></div>
+        <div class="fgrid">
+          <label class="field"><span>Associação (APD)</span><input class="input" id="co-apd" data-co="apd" value="${v("apd")}" placeholder="Nome da associação"></label>
+          <label class="field"><span>Nº de sócio</span><input class="input" id="co-apdn" data-co="apdn" value="${v("apdn")}"></label>
+          <label class="chk full" style="display:flex;gap:8px;font-size:14px"><input type="checkbox" id="co-18" data-co="maior" ${c.maior?"checked":""}> Confirmo que tenho 18 anos ou mais e que mostro o cartão de sócio na entrega ou no levantamento.</label>
+        </div></div>`:""}
+      <div class="panel"><h2>Entrega</h2><div class="opts">
+        <label class="opt"><input type="radio" name="entrega" value="envio" data-co="entrega" ${c.entrega==="envio"?"checked":""}><span><b>Envio CTT (24–48h)</b><small>${eur(S.cfg.portes)} · grátis acima de ${eur(S.cfg.portesGratis).replace(",00","")}</small></span></label>
+        <label class="opt"><input type="radio" name="entrega" value="loja" data-co="entrega" ${c.entrega==="loja"?"checked":""}><span><b>Levantar na loja</b><small>Grátis · ${esc(S.cfg.morada)}</small></span></label>
+      </div>
+      ${c.entrega==="envio"?`<div class="fgrid" style="margin-top:14px">
+        <label class="field full"><span>Morada</span><input class="input" id="co-morada" data-co="morada" value="${v("morada")}" autocomplete="street-address"></label>
+        <label class="field"><span>Código postal</span><input class="input" id="co-cp" data-co="cp" value="${v("cp")}" placeholder="3000-000" autocomplete="postal-code"></label>
+        <label class="field"><span>Localidade</span><input class="input" id="co-loc" data-co="loc" value="${v("loc")}" autocomplete="address-level2"></label>
+      </div>`:""}</div>
+      <div class="panel"><h2>Pagamento</h2><div class="opts">
+        ${Object.entries(PAGAMENTOS).filter(([k])=>k!=="loja"||c.entrega==="loja").map(([k,o])=>`<label class="opt"><input type="radio" name="pag" value="${k}" data-co="pagamento" ${c.pagamento===k?"checked":""}><span><b>${o.t}</b><small>${o.d}</small></span></label>`).join("")}
+      </div>
+      <label class="field" style="margin-top:14px"><span>Notas (opcional)</span><textarea class="input" id="co-notas" data-co="notas" style="min-height:70px">${v("notas")}</textarea></label>
+      </div>
+    </div>
+    <div class="panel" style="position:sticky;top:130px">
+      <h2>Resumo</h2>
+      ${t.linhas.map(l=>`<div class="sumrow" style="padding:6px 0;gap:12px"><span>${l.q} × ${esc(l.p.nome)}</span><span class="mono">${eur(precoAtual(l.p)*l.q)}</span></div>`).join("")}
+      <div class="sumrow" style="margin-top:8px"><span>Subtotal</span><span class="mono">${eur(t.sub)}</span></div>
+      <div class="sumrow"><span>Envio</span><span class="mono">${t.envio?eur(t.envio):"Grátis"}</span></div>
+      <div class="sumrow total"><span>Total</span><span>${eur(t.total)}</span></div>
+      <p class="hint" style="margin-top:8px">IVA incluído à taxa legal em vigor.</p>
+      ${S.coErr?`<p class="err" style="margin-top:10px">${esc(S.coErr)}</p>`:""}
+      <button class="btn btn-primary" type="submit" style="width:100%;margin-top:12px" ${S.busy?"disabled":""}>${S.busy?"A registar…":"Confirmar encomenda"}</button>
+    </div>
+  </form>`;
+}
+function validar(t){
+  const c=S.co;
+  if (!c.nome || c.nome.trim().length<3) return "Escreve o teu nome completo.";
+  if (!/^\S+@\S+\.\S+$/.test(c.email||"")) return "O email não parece válido.";
+  if (!/^(\+351)?\s?9\d{2}\s?\d{3}\s?\d{3}$|^(\+351)?\s?2\d{2}\s?\d{3}\s?\d{3}$/.test((c.tel||"").trim())) return "Indica um número de telefone português (9 dígitos).";
+  if (c.nif && !/^\d{9}$/.test(c.nif.trim())) return "O NIF tem 9 dígitos.";
+  if (t.linhas.some(l=>isReplica(l.p))){
+    if (!c.apd || !c.apdn) return "Indica a tua APD e o nº de sócio.";
+    if (!c.maior) return "Confirma que tens 18 anos ou mais.";
+  }
+  if (c.entrega==="envio"){
+    if (!c.morada) return "Indica a morada de entrega.";
+    if (!/^\d{4}-\d{3}$/.test((c.cp||"").trim())) return "O código postal tem o formato 0000-000.";
+    if (!c.loc) return "Indica a localidade.";
+  }
+  if (c.pagamento==="loja" && c.entrega!=="loja") return "Pagar na loja só é possível com levantamento.";
+  return "";
+}
+async function submeter(){
+  const t = totais();
+  const e = validar(t);
+  if (e){ S.coErr=e; render(); return; }
+  if (S.static){ const d=new Date(); S.lastOrder={numero:"DEMO-"+Math.random().toString(36).slice(2,6).toUpperCase(), data:d.toISOString(), cliente:{nome:S.co.nome.trim(), email:S.co.email.trim(), tel:S.co.tel.trim()}, apd:t.linhas.some(l=>isReplica(l.p))?{associacao:S.co.apd}:null, pagamento:S.co.pagamento, total:t.total, mb:{entidade:"12345", referencia:"000 000 000"}}; S.cart=[]; saveCart(); S.view="ok"; render(); scrollTo(0,0); return; }
+  if (!S.db){ S.coErr="A loja está sem ligação à base de dados neste momento. Tenta de novo daqui a pouco."; render(); return; }
+  for (const l of t.linhas) if (l.q > l.p.stock){ S.coErr=`Só há ${l.p.stock} unidades de ${l.p.nome}.`; render(); return; }
+  S.busy=true; S.coErr=""; render();
+  const d = new Date(), pad=n=>String(n).padStart(2,"0");
+  const nr = `CT${String(d.getFullYear()).slice(2)}${pad(d.getMonth()+1)}${pad(d.getDate())}-${Math.random().toString(36).slice(2,6).toUpperCase()}`;
+  const c=S.co;
+  const enc = {
+    numero:nr, data:d.toISOString(), estado:"Pendente", stockDescontado:false,
+    cliente:{nome:c.nome.trim(), email:c.email.trim(), tel:c.tel.trim(), nif:(c.nif||"").trim()},
+    apd: t.linhas.some(l=>isReplica(l.p)) ? {associacao:c.apd, socio:c.apdn, maior18:!!c.maior} : null,
+    entrega:c.entrega, morada: c.entrega==="envio" ? {rua:c.morada, cp:c.cp, localidade:c.loc} : null,
+    pagamento:c.pagamento, notas:c.notas||"",
+    itens:t.linhas.map(l=>({id:l.id, nome:l.p.nome, preco:precoAtual(l.p), q:l.q})),
+    subtotal:+t.sub.toFixed(2), envio:+t.envio.toFixed(2), total:+t.total.toFixed(2)
+  };
+  if (c.pagamento==="multibanco") enc.mb = {entidade:"12345", referencia:String(Math.floor(100000000+Math.random()*899999999)).replace(/(\d{3})(?=\d)/g,"$1 ")};
+  try{
+    await S.db.collection("encomendas").doc(nr).set(enc);
+    S.lastOrder = enc; S.cart=[]; saveCart(); S.busy=false; S.view="ok"; render(); scrollTo(0,0);
+  }catch(err){
+    S.busy=false;
+    S.coErr = err && err.code==="quota_exceeded" ? "A loja atingiu o limite de encomendas guardadas. Contacta-nos por telefone." : "Não foi possível registar a encomenda. Verifica a ligação e tenta outra vez.";
+    render();
+  }
+}
+function vConfirm(){
+  const o=S.lastOrder; if(!o) return `<div class="empty">Sem encomenda recente.</div>`;
+  const c=S.cfg;
+  let pay="";
+  if (o.pagamento==="multibanco") pay=`<dl class="payref"><dt>Entidade</dt><dd>${o.mb.entidade}</dd><dt>Referência</dt><dd>${o.mb.referencia}</dd><dt>Montante</dt><dd>${eur(o.total)}</dd></dl><p class="hint">Referência de demonstração. Na loja real é gerada pelo Ifthenpay ou Eupago.</p>`;
+  else if (o.pagamento==="mbway") pay=`<p>Vais receber um pedido MB WAY de <b>${eur(o.total)}</b> no número <span class="mono">${esc(o.cliente.tel)}</span>.</p><p class="hint">Na loja real o pedido é enviado automaticamente pelo Ifthenpay ou Eupago.</p>`;
+  else if (o.pagamento==="transferencia") pay=`<dl class="payref"><dt>IBAN</dt><dd>${esc(c.iban)}</dd><dt>Montante</dt><dd>${eur(o.total)}</dd><dt>Descritivo</dt><dd>${o.numero}</dd></dl>`;
+  else pay=`<p>Pagas <b>${eur(o.total)}</b> no levantamento, em ${esc(c.morada)}.</p>`;
+  return `<div class="confirm">
+    <span class="eyebrow">Encomenda registada</span>
+    <h1>Obrigado, ${esc(o.cliente.nome.split(" ")[0])}</h1>
+    ${S.static?`<p class="notice">Isto é uma montra de demonstração: nenhuma encomenda foi registada nem paga.</p>`:""}<p>O número da tua encomenda é <b class="mono">${o.numero}</b>. Enviámos o resumo para ${esc(o.cliente.email)}.</p>
+    ${pay}
+    ${o.apd?`<div class="legal" style="text-align:left">${ico("alert")}<span>Tem à mão o cartão de sócio da ${esc(o.apd.associacao)} e um documento de identificação para a entrega.</span></div>`:""}
+    <button class="btn btn-primary" data-act="home">Voltar à loja</button>
+  </div>`;
+}
+
+/* ---------- Gestão ---------- */
+function vAdmin(){
+  const pend = S.encomendas.filter(o=>o.estado==="Pendente").length;
+  return `<div class="admin-head"><div><span class="eyebrow">Área reservada</span><h1>Gestão da loja</h1></div>
+    <button class="btn btn-primary" data-act="admin-new">${ico("plus")} Novo produto</button></div>
+  <div class="atabs" role="tablist">
+    <button data-act="atab" data-t="produtos" aria-selected="${S.aTab==="produtos"}">Produtos (${S.produtos.length})</button>
+    <button data-act="atab" data-t="encomendas" aria-selected="${S.aTab==="encomendas"}">Encomendas${pend?` · ${pend} pendente${pend>1?"s":""}`:""}</button>
+    <button data-act="atab" data-t="config" aria-selected="${S.aTab==="config"}">Dados da loja</button>
+  </div>
+  ${S.aTab==="produtos" ? (S.edit ? vEditor() : vAProdutos()) : S.aTab==="encomendas" ? vAEncomendas() : vAConfig()}`;
+}
+function vAProdutos(){
+  const q=S.aq.toLowerCase();
+  const l = S.produtos.filter(p=>!q || (p.nome+" "+p.marca+" "+p.categoria).toLowerCase().includes(q)).sort((a,b)=>(b.criadoEm||0)-(a.criadoEm||0));
+  return `<div class="toolbar"><input class="input" id="aq" placeholder="Procurar na lista…" value="${esc(S.aq)}"><span class="hint">O stock pode ser alterado diretamente na tabela.</span></div>
+  <div class="tablewrap"><table class="list"><thead><tr><th></th><th>Produto</th><th>Categoria</th><th class="num">Preço</th><th class="num">Stock</th><th>Estado</th><th></th></tr></thead><tbody>
+  ${l.map(p=>`<tr>
+    <td><div class="mini">${thumb(p)}</div></td>
+    <td><b>${esc(p.nome)}</b><br><span class="hint">${esc(p.marca)}${p.ref?` · ${esc(p.ref)}`:""}</span></td>
+    <td>${esc(p.categoria)}</td>
+    <td class="num">${eur(precoAtual(p))}${p.precoPromo>0&&p.precoPromo<p.preco?`<br><span class="hint" style="text-decoration:line-through">${eur(p.preco)}</span>`:""}</td>
+    <td class="num"><input class="input stockin mono" id="st-${esc(p.id)}" data-stock="${esc(p.id)}" inputmode="numeric" value="${p.stock}" aria-label="Stock de ${esc(p.nome)}"></td>
+    <td><button class="pill ${p.ativo!==false?"on":"off"}" style="border:0" data-act="toggle" data-id="${esc(p.id)}" title="Clicar para alternar">${p.ativo!==false?"Visível":"Oculto"}</button></td>
+    <td style="white-space:nowrap"><button class="btn btn-ghost btn-sm" data-act="edit" data-id="${esc(p.id)}">Editar</button></td>
+  </tr>`).join("") || `<tr><td colspan="7" class="muted" style="text-align:center;padding:30px">Sem produtos.</td></tr>`}
+  </tbody></table></div>`;
+}
+function blankProd(){ return {id:null, nome:"", marca:"", ref:"", categoria:S.cfg.categorias[0], preco:"", precoPromo:"", stock:1, descricao:"", specsTxt:"Sistema: \nFPS (0,20 g): \nEnergia: \nComprimento: \nPeso: \nCapacidade do carregador: ", imagens:[], destaque:false, novidade:true, ativo:true, replica:true, uploading:0, err:""}; }
+function vEditor(){
+  const e=S.edit, v=k=>esc(e[k]??"");
+  return `<div style="margin-bottom:14px"><button class="linkbtn" data-act="edit-cancel">← Voltar à lista</button></div>
+  <form class="editor" id="edForm" novalidate>
+    <div class="panel"><h2>${e.id?"Editar produto":"Novo produto"}</h2><div class="fgrid">
+      <label class="field full"><span>Nome do produto *</span><input class="input" id="ed-nome" data-ed="nome" value="${v("nome")}" placeholder="Ex.: Specna Arms SA-E14 EDGE"></label>
+      <label class="field"><span>Marca</span><input class="input" id="ed-marca" data-ed="marca" value="${v("marca")}" list="marcasList"><datalist id="marcasList">${[...new Set(S.produtos.map(p=>p.marca).filter(Boolean))].map(m=>`<option value="${esc(m)}">`).join("")}</datalist></label>
+      <label class="field"><span>Referência (opcional)</span><input class="input" id="ed-ref" data-ed="ref" value="${v("ref")}"></label>
+      <label class="field"><span>Categoria</span><select class="input" id="ed-cat" data-ed="categoria">${S.cfg.categorias.map(k=>`<option ${e.categoria===k?"selected":""}>${esc(k)}</option>`).join("")}</select></label>
+      <label class="field"><span>Stock (unidades)</span><input class="input" id="ed-stock" data-ed="stock" inputmode="numeric" value="${v("stock")}"></label>
+      <label class="field"><span>Preço (€) *</span><input class="input" id="ed-preco" data-ed="preco" inputmode="decimal" value="${v("preco")}" placeholder="249,90"></label>
+      <label class="field"><span>Preço promocional (€)</span><input class="input" id="ed-promo" data-ed="precoPromo" inputmode="decimal" value="${v("precoPromo")}" placeholder="Deixa vazio se não houver"></label>
+      <label class="field full"><span>Descrição</span><textarea class="input" id="ed-desc" data-ed="descricao" style="min-height:160px" placeholder="Descreve o produto: para quem é, o que traz na caixa, pontos fortes…">${v("descricao")}</textarea></label>
+      <label class="field full"><span>Especificações</span><textarea class="input mono" id="ed-specs" data-ed="specsTxt" style="font-size:13.5px">${v("specsTxt")}</textarea><span class="hint">Uma por linha, no formato <b>Nome: valor</b>. Linhas sem valor são ignoradas. Se incluíres “Energia”, aparece no cartão do produto.</span></label>
+    </div></div>
+    <div>
+      <div class="panel"><h2>Fotografias</h2>
+        ${e.imagens.length?`<div class="imgs" style="margin-bottom:10px">${e.imagens.map((id,k)=>`<div class="it"><img src="${imgSrc(id)}" alt="">${k===0?`<span class="first">Principal</span>`:`<button type="button" class="rm" style="left:4px;right:auto" data-act="img-first" data-i="${k}">Principal</button>`}<button type="button" class="rm" data-act="img-rm" data-i="${k}" aria-label="Remover foto">✕</button></div>`).join("")}</div>`:""}
+        ${S.assets ? `<label class="drop" for="ed-files">${e.uploading?`A carregar ${e.uploading} foto(s)…`:"Clica para escolher fotos<br><span class='hint'>JPG, PNG ou WebP · redimensionadas para 1600 px</span>"}<input type="file" id="ed-files" accept="image/*" multiple></label>` : `<p class="hint">O envio de fotos não está disponível nesta vista.</p>`}
+      </div>
+      <div class="panel"><h2>Visibilidade</h2><div class="fgroup">
+        <label class="chk"><input type="checkbox" data-ed="ativo" ${e.ativo?"checked":""}> Visível na loja</label>
+        <label class="chk"><input type="checkbox" data-ed="destaque" ${e.destaque?"checked":""}> Mostrar em Destaques</label>
+        <label class="chk"><input type="checkbox" data-ed="novidade" ${e.novidade?"checked":""}> Marcar como Novidade</label>
+        <label class="chk"><input type="checkbox" data-ed="replica" ${e.replica?"checked":""}> É uma réplica (exige 18+ e APD)</label>
+      </div></div>
+      <div class="panel" style="display:flex;flex-direction:column;gap:10px">
+        ${e.err?`<p class="err">${esc(e.err)}</p>`:""}
+        <button class="btn btn-primary" type="submit" ${S.busy||e.uploading?"disabled":""}>${S.busy?"A guardar…":"Guardar produto"}</button>
+        ${e.id?`<button type="button" class="btn btn-danger ${S.armed===e.id?"armed":""}" data-act="del" data-id="${esc(e.id)}">${S.armed===e.id?"Clica outra vez para apagar de vez":"Apagar produto"}</button>`:""}
+      </div>
+    </div>
+  </form>`;
+}
+function vAEncomendas(){
+  const l = S.encomendas.filter(o=>!S.oFilter || o.estado===S.oFilter).sort((a,b)=>String(b.data).localeCompare(String(a.data)));
+  return `<div class="toolbar"><select class="input" id="ofilter" style="max-width:220px"><option value="">Todos os estados</option>${ESTADOS.map(s=>`<option ${S.oFilter===s?"selected":""}>${s}</option>`).join("")}</select>
+    <span class="hint">Ao marcar como “Paga”, o stock dos artigos é descontado automaticamente.</span></div>
+  ${l.length ? l.map(o=>`<details class="order"><summary>
+      <span><b class="mono">${esc(o.numero)}</b><br><span class="hint">${new Date(o.data).toLocaleString("pt-PT",{dateStyle:"short",timeStyle:"short"})}</span></span>
+      <span class="hide-sm">${esc(o.cliente?.nome)}<br><span class="hint">${esc(PAGAMENTOS[o.pagamento]?.t||o.pagamento)} · ${o.entrega==="loja"?"Levantamento":"Envio CTT"}</span></span>
+      <b class="mono hide-sm">${eur(o.total)}</b>
+      <span class="pill st-${esc(o.estado)}">${esc(o.estado)}</span>
+    </summary>
+    <div class="od">
+      <div>
+        ${(o.itens||[]).map(i=>`<div class="sumrow" style="padding:3px 0;gap:10px"><span>${i.q} × ${esc(i.nome)}</span><span class="mono">${eur(i.preco*i.q)}</span></div>`).join("")}
+        <div class="sumrow"><span>Envio</span><span class="mono">${eur(o.envio)}</span></div>
+        <div class="sumrow total"><span>Total</span><span>${eur(o.total)}</span></div>
+        <label class="field" style="margin-top:12px;max-width:240px"><span>Estado</span><select class="input" id="os-${esc(o.numero)}" data-ostate="${esc(o.numero)}">${ESTADOS.map(s=>`<option ${o.estado===s?"selected":""}>${s}</option>`).join("")}</select></label>
+      </div>
+      <dl class="kv">
+        <dt>Email</dt><dd>${esc(o.cliente?.email)}</dd>
+        <dt>Telefone</dt><dd class="mono">${esc(o.cliente?.tel)}</dd>
+        ${o.cliente?.nif?`<dt>NIF</dt><dd class="mono">${esc(o.cliente.nif)}</dd>`:""}
+        ${o.morada?`<dt>Morada</dt><dd>${esc(o.morada.rua)}<br>${esc(o.morada.cp)} ${esc(o.morada.localidade)}</dd>`:""}
+        ${o.apd?`<dt>APD</dt><dd>${esc(o.apd.associacao)} · sócio ${esc(o.apd.socio)}</dd>`:""}
+        ${o.mb?`<dt>Ref. MB</dt><dd class="mono">${o.mb.entidade} / ${o.mb.referencia}</dd>`:""}
+        ${o.notas?`<dt>Notas</dt><dd>${esc(o.notas)}</dd>`:""}
+      </dl>
+    </div></details>`).join("") : `<div class="empty">Sem encomendas${S.oFilter?" neste estado":""}.</div>`}`;
+}
+function vAConfig(){
+  const c={...S.cfg, ...(S.cfDraft||{})}; if (typeof c.categorias==="string") c.categorias=c.categorias.split(",").map(x=>x.trim()).filter(Boolean);
+  const v=k=>esc(c[k]??"");
+  const f=(k,l,ph="",full=false)=>`<label class="field ${full?"full":""}"><span>${l}</span><input class="input" id="cf-${k}" data-cf="${k}" value="${v(k)}" placeholder="${esc(ph)}"></label>`;
+  return `<form class="panel" id="cfForm" novalidate><h2>Dados da loja</h2><div class="fgrid">
+    ${f("nome","Nome da loja")}${f("slogan","Subtítulo")}
+    ${f("heroTitulo","Título de destaque na página inicial","", true)}
+    <label class="field full"><span>Texto de destaque</span><textarea class="input" id="cf-heroTexto" data-cf="heroTexto" style="min-height:80px">${v("heroTexto")}</textarea><span class="hint">No título, envolve palavras em &lt;em&gt;…&lt;/em&gt; para as pôr a laranja.</span></label>
+    ${f("telefone","Telefone")}${f("email","Email")}
+    ${f("morada","Morada da loja","",true)}${f("horario","Horário")}
+    ${f("mbway","Nº MB WAY")}
+    ${f("portes","Custo de envio (€)")}${f("portesGratis","Portes grátis a partir de (€)")}
+    ${f("iban","IBAN para transferências","",true)}
+    <label class="field full"><span>Categorias (separadas por vírgulas)</span><input class="input" id="cf-categorias" data-cf="categorias" value="${esc(c.categorias.join(", "))}"></label>
+  </div>
+  <h2 style="margin-top:22px">Imagem ou vídeo da página inicial</h2>
+  <p class="hint" style="margin-bottom:10px">${c.heroImagem?"Está a usar uma imagem sua.":c.heroVideo?"Está a usar um vídeo seu.":"Está a usar a animação de visão noturna."} Podes carregar uma imagem (JPG, PNG) ou um vídeo MP4/WebM até 20 MB, que toca em ciclo sem som, no quadro ao lado do título.</p>
+  <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+    ${S.assets?`<label class="btn btn-ghost btn-sm" for="herovid" style="cursor:pointer">Carregar imagem ou vídeo<input type="file" id="herovid" accept="image/*,video/mp4,video/webm" hidden></label>`:""}
+    ${(c.heroVideo||c.heroImagem)?`<button type="button" class="btn btn-ghost btn-sm" data-act="herovid-rm">Voltar à animação</button>`:""}
+  </div>
+  <h2 style="margin-top:22px">Imagens das categorias</h2>
+  <p class="hint" style="margin-bottom:10px">Aparecem na página inicial. Usa imagens com o nome da categoria escrito, no formato 4:3.</p>
+  <div class="catimgs">${c.categorias.map((k,i)=>`<div class="ci2"><div class="th2">${catImgId(k)?`<img src="${imgSrc(catImgId(k))}" alt="">`:ph(k)}</div><b>${esc(k)}</b>${S.assets?`<label class="up" for="catimg-${i}">${catImgId(k)?"Trocar imagem":"Carregar imagem"}<input type="file" accept="image/*" id="catimg-${i}" data-catimg="${esc(k)}"></label>`:""}</div>`).join("")}</div>
+  ${S.setErr?`<p class="err" style="margin-top:10px">${esc(S.setErr)}</p>`:""}
+  <button class="btn btn-primary" type="submit" style="margin-top:16px">Guardar alterações</button></form>`;
+}
+
+/* ---------- Ações de gestão ---------- */
+function specsFromTxt(t){ return String(t||"").split("\n").map(l=>{ const i=l.indexOf(":"); return i<0?null:{k:l.slice(0,i).trim(), v:l.slice(i+1).trim()}; }).filter(s=>s && s.k && s.v); }
+function specsToTxt(s){ return (s||[]).map(x=>`${x.k}: ${x.v}`).join("\n"); }
+function slug(s){ return (String(s).normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"").slice(0,48) || "produto") + "-" + Math.random().toString(36).slice(2,6); }
+async function guardarProduto(){
+  const e=S.edit;
+  if (!e.nome.trim()){ e.err="O produto precisa de um nome."; render(); return; }
+  const preco=num(e.preco), promo=e.precoPromo===""?0:num(e.precoPromo);
+  if (preco<=0){ e.err="Indica um preço maior que zero."; render(); return; }
+  if (promo && promo>=preco){ e.err="O preço promocional tem de ser mais baixo que o preço normal."; render(); return; }
+  const id = e.id || slug(e.nome);
+  const old = prod(id);
+  const doc = { nome:e.nome.trim(), marca:e.marca.trim(), ref:e.ref.trim(), categoria:e.categoria, preco, precoPromo:promo,
+    stock:Math.max(0,Math.round(num(e.stock))), descricao:e.descricao, specs:specsFromTxt(e.specsTxt), imagens:e.imagens,
+    destaque:!!e.destaque, novidade:!!e.novidade, ativo:!!e.ativo, replica:!!e.replica, criadoEm: old?.criadoEm || Date.now(), atualizadoEm:Date.now() };
+  S.busy=true; render();
+  try{ await S.db.collection("produtos").doc(id).set(doc); S.busy=false; S.edit=null; toast("Produto guardado."); render(); }
+  catch(err){ S.busy=false; e.err = err?.code==="quota_exceeded" ? "Limite de produtos atingido. Apaga produtos antigos para criar novos." : "Não foi possível guardar. Confirma que tens permissão de edição e tenta de novo."; render(); }
+}
+async function prepImg(file){
+  if (/svg|gif/.test(file.type)) return file;
+  try{
+    const bmp = await createImageBitmap(file);
+    const s = Math.min(1, 1600/Math.max(bmp.width,bmp.height));
+    const cv = document.createElement("canvas"); cv.width=Math.round(bmp.width*s); cv.height=Math.round(bmp.height*s);
+    const x = cv.getContext("2d"); x.fillStyle="#fff"; x.fillRect(0,0,cv.width,cv.height); x.drawImage(bmp,0,0,cv.width,cv.height);
+    return await new Promise(r=>cv.toBlob(b=>r(b||file),"image/jpeg",.86));
+  }catch(e){ return file; }
+}
+async function uploadFiles(files){
+  const e=S.edit; if(!e || !S.assets) return;
+  const list=[...files].filter(f=>f.type.startsWith("image/")); if(!list.length) return;
+  e.uploading=list.length; e.err=""; render();
+  for (const f of list){
+    try{ const b=await prepImg(f); const r=await S.assets.upload(b, b.type?undefined:{type:"image/jpeg"}); if(S.edit===e) e.imagens=[...e.imagens, r.id]; }
+    catch(err){ e.err = err?.code==="too_large" ? "Uma das fotos é demasiado grande (máx. 20 MB)." : err?.code==="unsupported_type" ? "Formato de imagem não suportado. Usa JPG, PNG ou WebP." : "Não foi possível enviar uma das fotos."; }
+    e.uploading--; if (S.edit===e) render();
+  }
+}
+async function setCfg(patch){
+  const ref=S.db.doc("config/loja"); const cur=await ref.get();
+  if (cur.exists) await ref.update(patch); else await ref.set({...S.cfg, ...patch});
+  S.cfg={...S.cfg, ...patch}; render();
+}
+async function uploadHeroVideo(file){
+  if (!file || !S.assets || !S.db) return;
+  if (file.type.startsWith("image/")){
+    toast("A carregar imagem…");
+    try{ const b=await prepImg(file); const r=await S.assets.upload(b, b.type?undefined:{type:"image/jpeg"}); await setCfg({heroImagem:r.id, heroVideo:""}); toast("Imagem da página inicial atualizada."); }
+    catch(err){ toast("Não foi possível carregar a imagem."); }
+    return;
+  }
+  if (!/^video\/(mp4|webm)$/.test(file.type)){ toast("Usa uma imagem ou um vídeo MP4 ou WebM."); return; }
+  if (file.size > 20*1024*1024){ toast("O vídeo tem mais de 20 MB. Reduz a qualidade ou a duração."); return; }
+  toast("A carregar vídeo…");
+  try{ const r=await S.assets.upload(file, {type:file.type}); await setCfg({heroVideo:r.id, heroImagem:""}); toast("Vídeo da página inicial atualizado."); }
+  catch(err){ toast(err?.code==="too_large" ? "O vídeo é demasiado grande (máx. 20 MB)." : "Não foi possível carregar o vídeo."); }
+}
+async function uploadCatImg(cat, file){
+  if (!file || !S.assets || !S.db) return;
+  toast("A carregar imagem…");
+  try{
+    const b = await prepImg(file);
+    const r = await S.assets.upload(b, b.type?undefined:{type:"image/jpeg"});
+    const list = (S.cfg.catImagens||[]).filter(x=>x.cat!==cat).concat([{cat, id:r.id}]);
+    const ref = S.db.doc("config/loja"); const cur = await ref.get();
+    if (cur.exists) await ref.update({catImagens:list}); else await ref.set({...S.cfg, catImagens:list});
+    S.cfg = {...S.cfg, catImagens:list}; render();
+    toast(`Imagem de ${cat} atualizada.`);
+  }catch(err){ toast("Não foi possível carregar a imagem."); }
+}
+async function mudarEstado(nr, estado){
+  const o = S.encomendas.find(x=>x.numero===nr); if(!o) return;
+  const upd = {estado};
+  try{
+    if (estado==="Paga" && !o.stockDescontado){
+      for (const i of o.itens||[]){ const p=prod(i.id); if(p) await S.db.collection("produtos").doc(p.id).update({stock:Math.max(0,p.stock-i.q)}); }
+      upd.stockDescontado = true;
+    }
+    await S.db.collection("encomendas").doc(nr).update(upd);
+    toast(`Encomenda ${nr}: ${estado}.`);
+  }catch(err){ toast("Não foi possível atualizar a encomenda."); }
+}
+
+/* ---------- Eventos ---------- */
+function go(view, extra={}){ Object.assign(S, {view, cartOpen:false}, extra); render(); scrollTo(0,0); }
+document.addEventListener("click", ev=>{
+  const b = ev.target.closest("[data-act]"); if(!b) return;
+  const a=b.dataset.act, id=b.dataset.id;
+  if (a!=="del") S.armed=null;
+  switch(a){
+    case "home": go("home"); break;
+    case "herovid-rm": setCfg({heroVideo:"", heroImagem:""}).then(()=>toast("A página inicial voltou à animação.")); break;
+    case "theme": setTheme(currentDark() ? "light" : "dark"); break;
+    case "cat": S.f={cat:b.dataset.cat||"", q:"", marcas:[], stock:false, promo:!!b.dataset.promo, max:"", ordem:"novos"}; $("#q").value=""; go("cat"); break;
+    case "prod": go("prod",{pid:id, img:0, tab:"desc", qty:1}); break;
+    case "img": S.img=+b.dataset.i; render(); break;
+    case "tab": S.tab=b.dataset.t; render(); break;
+    case "qty-": S.qty=Math.max(1,S.qty-1); render(); break;
+    case "qty+": { const p=prod(S.pid); S.qty=Math.min(Math.max(1,p?.stock||1),S.qty+1); render(); break; }
+    case "add": addCart(id, b.dataset.useqty ? S.qty : 1); if (S.cartOpen) renderCart(); break;
+    case "cart": S.cartOpen=true; renderCart(); break;
+    case "cart-close": S.cartOpen=false; renderCart(); break;
+    case "cq+": case "cq-": case "cq0": {
+      const l=S.cart.find(x=>x.id===id), p=prod(id); if(!l) break;
+      if (a==="cq0") S.cart=S.cart.filter(x=>x!==l);
+      else { l.q += a==="cq+"?1:-1; if (p && l.q>p.stock){ l.q=p.stock; toast(`Só há ${p.stock} em stock.`); } if (l.q<=0) S.cart=S.cart.filter(x=>x!==l); }
+      saveCart(); renderCart(); if (S.view==="checkout") render(); break; }
+    case "checkout": S.coErr=""; go("checkout"); break;
+    case "clear-f": S.f={...S.f, marcas:[], stock:false, promo:false, max:""}; render(); break;
+    case "admin": S.edit=null; go("admin"); break;
+    case "atab": S.aTab=b.dataset.t; S.edit=null; render(); break;
+    case "admin-new": S.aTab="produtos"; S.edit=blankProd(); go("admin"); break;
+    case "edit": { const p=prod(id); S.edit={...blankProd(), ...p, id:p.id, preco:String(p.preco).replace(".",","), precoPromo:p.precoPromo?String(p.precoPromo).replace(".",","):"", specsTxt:specsToTxt(p.specs), imagens:[...(p.imagens||[])], ativo:p.ativo!==false, replica:isReplica(p)}; render(); scrollTo(0,0); break; }
+    case "edit-cancel": S.edit=null; render(); break;
+    case "img-rm": S.edit.imagens=S.edit.imagens.filter((_,k)=>k!==+b.dataset.i); render(); break;
+    case "img-first": { const k=+b.dataset.i, im=[...S.edit.imagens]; const [x]=im.splice(k,1); im.unshift(x); S.edit.imagens=im; render(); break; }
+    case "del":
+      if (S.armed!==id){ S.armed=id; render(); break; }
+      S.armed=null; S.db.collection("produtos").doc(id).delete().then(()=>{ S.edit=null; S.cart=S.cart.filter(x=>x.id!==id); saveCart(); toast("Produto apagado."); render(); }).catch(()=>toast("Não foi possível apagar."));
+      break;
+    case "toggle": { const p=prod(id); S.db.collection("produtos").doc(id).update({ativo: p.ativo===false}).catch(()=>toast("Não foi possível alterar.")); break; }
+  }
+});
+document.addEventListener("input", ev=>{
+  const t=ev.target;
+  if (t.dataset.co){ S.co[t.dataset.co] = t.type==="checkbox" ? t.checked : t.value; if (t.type==="radio"){ if(t.dataset.co==="entrega" && t.value!=="loja" && S.co.pagamento==="loja") S.co.pagamento="mbway"; render(); } return; }
+  if (t.dataset.ed && S.edit){ S.edit[t.dataset.ed] = t.type==="checkbox" ? t.checked : t.value; return; }
+  if (t.dataset.cf){ S.cfDraft = S.cfDraft||{}; S.cfDraft[t.dataset.cf]=t.value; return; }
+  if (t.id==="aq"){ S.aq=t.value; const pos=t.selectionStart; render(); const n=$("#aq"); n.focus(); n.setSelectionRange(pos,pos); return; }
+  if (t.dataset.f==="max"){ S.f.max=t.value; clearTimeout(S._mt); S._mt=setTimeout(()=>{ const id=t.id, pos=t.selectionStart; render(); const n=document.getElementById(id); if(n){n.focus(); n.setSelectionRange(pos,pos);} },450); return; }
+  if (t.id==="pqty"){ const p=prod(S.pid); S.qty=Math.max(1,Math.min(p?.stock||1, parseInt(t.value)||1)); return; }
+});
+document.addEventListener("change", ev=>{
+  const t=ev.target;
+  if (t.dataset.f==="cat"){ S.f.cat=t.value; S.f.marcas=[]; render(); }
+  else if (t.dataset.f==="ordem"){ S.f.ordem=t.value; render(); }
+  else if (t.dataset.f==="marca"){ S.f.marcas = t.checked ? [...S.f.marcas, t.value] : S.f.marcas.filter(m=>m!==t.value); render(); }
+  else if (t.dataset.f==="stock" || t.dataset.f==="promo"){ S.f[t.dataset.f]=t.checked; render(); }
+  else if (t.id==="ed-files"){ uploadFiles(t.files); t.value=""; }
+  else if (t.id==="herovid"){ uploadHeroVideo(t.files[0]); t.value=""; }
+  else if (t.dataset.catimg){ uploadCatImg(t.dataset.catimg, t.files[0]); t.value=""; }
+  else if (t.dataset.stock){ const v=Math.max(0,parseInt(t.value)||0); S.db?.collection("produtos").doc(t.dataset.stock).update({stock:v}).then(()=>toast("Stock atualizado.")).catch(()=>toast("Não foi possível atualizar o stock.")); }
+  else if (t.id==="ofilter"){ S.oFilter=t.value; render(); }
+  else if (t.dataset.ostate){ mudarEstado(t.dataset.ostate, t.value); }
+});
+document.addEventListener("submit", ev=>{
+  ev.preventDefault();
+  const f=ev.target;
+  if (f.id==="searchForm"){ const q=$("#q").value.trim(); S.f={cat:"", q, marcas:[], stock:false, promo:false, max:"", ordem:"novos"}; go("cat"); }
+  else if (f.id==="coForm") submeter();
+  else if (f.id==="edForm") guardarProduto();
+  else if (f.id==="cfForm") guardarConfig();
+});
+document.addEventListener("keydown", ev=>{ if (ev.key==="Escape" && S.cartOpen){ S.cartOpen=false; renderCart(); } });
+async function guardarConfig(){
+  const d={...S.cfg, ...(S.cfDraft||{})};
+  if (typeof d.categorias==="string") d.categorias=d.categorias.split(",").map(s=>s.trim()).filter(Boolean);
+  if (!d.categorias.length){ S.setErr="Indica pelo menos uma categoria."; render(); return; }
+  d.portes=num(d.portes); d.portesGratis=num(d.portesGratis);
+  try{ await S.db.doc("config/loja").set(d); S.cfDraft=null; S.setErr=""; toast("Dados da loja guardados."); }
+  catch(e){ S.setErr="Não foi possível guardar. Confirma que tens permissão de edição."; render(); }
+}
+
+/* ---------- Tema claro / escuro ---------- */
+function currentDark(){ const t=document.documentElement.getAttribute("data-theme"); return t ? t==="dark" : matchMedia("(prefers-color-scheme: dark)").matches; }
+function setTheme(t, save=true){ document.documentElement.setAttribute("data-theme", t); if(save){ try{ localStorage.setItem("cta_theme", t); }catch(e){} } themeLabel(); }
+function themeLabel(){ const l=$("#themeLbl"); if(l) l.textContent = currentDark() ? "Fundo branco" : "Fundo preto"; }
+try{ const t=localStorage.getItem("cta_theme"); if(t==="dark"||t==="light") setTheme(t,false); }catch(e){}
+themeLabel();
+
+/* ---------- Ícones e hero ---------- */
+function ico(n){
+  const P = {
+    plus:'<path d="M12 5v14M5 12h14"/>',
+    truck:'<path d="M3 6h11v10H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.6"/><circle cx="17.5" cy="17.5" r="1.6"/>',
+    wrench:'<path d="M14.5 5.5a4 4 0 0 0 5 5L12 18a2.1 2.1 0 0 1-3-3l7.5-7.5z"/><path d="M5 19l2-2"/>',
+    gauge:'<path d="M4 16a8 8 0 1 1 16 0"/><path d="M12 16l4-5"/><path d="M4 16h2M18 16h2M12 8v2"/>',
+    card:'<rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18M7 15h4"/>',
+    alert:'<path d="M12 4l9 16H3z"/><path d="M12 10v4M12 17v.5"/>'
+  };
+  return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${P[n]}</svg>`;
+}
+/* Cena de visão noturna (animação original em canvas) */
+let NV=null;
+function drawHero(){
+  const cv=$("#heroCanvas"); if(!cv) return;
+  if (NV && NV.cv===cv){ NV.resize(); return; }
+  if (NV) NV.stop();
+  NV = nightVision(cv);
+}
+function nightVision(cv){
+  const ctx=cv.getContext("2d");
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let w=0,h=0,dpr=1,raf=0,alive=true;
+  const noise=document.createElement("canvas"); noise.width=160; noise.height=120;
+  const nctx=noise.getContext("2d"); const nimg=nctx.createImageData(160,120);
+  let seed=7; const rnd=()=>{ seed=(seed*16807)%2147483647; return seed/2147483647; };
+  const trees=Array.from({length:70},(_,i)=>({x:i/69, h:.08+rnd()*.16, w:.02+rnd()*.03}));
+  const stars=Array.from({length:40},()=>({x:rnd(), y:rnd()*.45, p:rnd()*6}));
+  const ops=[{o:0,sc:1,sp:26},{o:.34,sc:.92,sp:26},{o:.66,sc:.86,sp:26}];
+  function resize(){ const r=cv.getBoundingClientRect(); dpr=Math.min(2,window.devicePixelRatio||1); w=r.width; h=r.height; cv.width=Math.max(1,w*dpr); cv.height=Math.max(1,h*dpr); }
+  function grain(){ const d=nimg.data; for(let k=0;k<d.length;k+=4){ const v=Math.random()*255; d[k]=v*.55; d[k+1]=v; d[k+2]=v*.6; d[k+3]=255; } nctx.putImageData(nimg,0,0); }
+  function operator(fx,fy,s,ph,t,idx){
+    const u=s/100, sw=Math.sin(ph);
+    ctx.save(); ctx.translate(fx,fy); ctx.lineCap="round"; ctx.lineJoin="round";
+    ctx.strokeStyle="#010803"; ctx.fillStyle="#010803";
+    // pernas
+    ctx.lineWidth=7*u;
+    ctx.beginPath(); ctx.moveTo(0,-44*u); ctx.lineTo(Math.sin(sw*.45)*22*u,0); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(0,-44*u); ctx.lineTo(-Math.sin(sw*.45)*22*u,0); ctx.stroke();
+    // tronco e colete
+    ctx.beginPath(); ctx.moveTo(-10*u,-80*u); ctx.lineTo(10*u,-80*u); ctx.lineTo(9*u,-42*u); ctx.lineTo(-9*u,-42*u); ctx.closePath(); ctx.fill();
+    ctx.fillRect(-13*u,-74*u,5*u,18*u);
+    // cabeça, capacete e NVG
+    ctx.beginPath(); ctx.arc(2*u,-88*u,8*u,0,Math.PI*2); ctx.fill();
+    ctx.beginPath(); ctx.arc(2*u,-90*u,10*u,Math.PI,0); ctx.fill();
+    ctx.fillRect(8*u,-95*u,8*u,5*u);
+    // espingarda
+    ctx.lineWidth=4.5*u;
+    ctx.beginPath(); ctx.moveTo(-8*u,-62*u); ctx.lineTo(40*u,-68*u); ctx.stroke();
+    ctx.lineWidth=3.5*u; ctx.beginPath(); ctx.moveTo(14*u,-65*u); ctx.lineTo(17*u,-54*u); ctx.stroke();
+    ctx.lineWidth=5*u; ctx.beginPath(); ctx.moveTo(-2*u,-70*u); ctx.lineTo(18*u,-65*u); ctx.stroke();
+    // laser IR
+    const a=-0.07+Math.sin(t*.0009+idx*2)*.035;
+    const mx=40*u, my=-68*u, L=w*1.2;
+    const g=ctx.createLinearGradient(mx,my,mx+L*Math.cos(a),my+L*Math.sin(a));
+    g.addColorStop(0,"rgba(215,255,222,.9)"); g.addColorStop(1,"rgba(215,255,222,0)");
+    ctx.strokeStyle=g; ctx.lineWidth=Math.max(1,1.4*u); ctx.shadowColor="#caffd4"; ctx.shadowBlur=6;
+    ctx.beginPath(); ctx.moveTo(mx,my); ctx.lineTo(mx+L*Math.cos(a),my+L*Math.sin(a)); ctx.stroke();
+    // estroboscópio IR no capacete
+    if (Math.floor(t/140+idx*3)%9===0){ ctx.fillStyle="#f2fff4"; ctx.shadowBlur=14; ctx.beginPath(); ctx.arc(-2*u,-100*u,2.6*u,0,Math.PI*2); ctx.fill(); }
+    ctx.restore();
+  }
+  function frame(t){
+    if (!alive || !cv.isConnected){ alive=false; return; }
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    const fl=.93+Math.random()*.07+Math.sin(t*.003)*.02;
+    // céu
+    const sky=ctx.createLinearGradient(0,0,0,h); sky.addColorStop(0,`rgb(${60*fl},${170*fl},${84*fl})`); sky.addColorStop(.6,`rgb(${40*fl},${128*fl},${58*fl})`); sky.addColorStop(1,"#0a3314");
+    ctx.fillStyle=sky; ctx.fillRect(0,0,w,h);
+    stars.forEach(st=>{ ctx.fillStyle=`rgba(225,255,230,${.35+.35*Math.sin(t*.004+st.p)})`; ctx.fillRect(st.x*w,st.y*h,1.6,1.6); });
+    // linha de árvores
+    const hy=h*.6; ctx.fillStyle="#0f4a1d"; ctx.beginPath(); ctx.moveTo(0,hy);
+    trees.forEach(tr=>{ const x=tr.x*w; ctx.lineTo(x-tr.w*w,hy); ctx.lineTo(x,hy-tr.h*h); ctx.lineTo(x+tr.w*w,hy); });
+    ctx.lineTo(w,hy); ctx.lineTo(w,h); ctx.lineTo(0,h); ctx.fill();
+    // chão
+    const gr=ctx.createLinearGradient(0,hy,0,h); gr.addColorStop(0,"#1d6b2c"); gr.addColorStop(1,"#0b3514"); ctx.fillStyle=gr; ctx.fillRect(0,hy,w,h-hy);
+    // operadores
+    const gy=h*.86, S=h*.42, span=w+S*1.2;
+    ops.forEach((o,i)=>{ const x=((t/1000*o.sp*(w/400)+o.o*span)%span)-S*.5; operator(x,gy-(1-o.sc)*h*.08,S*o.sc,t/1000*5+i,t,i); });
+    // grão
+    if (!reduce && Math.floor(t/40)%2===0) grain();
+    ctx.globalAlpha=.09; ctx.imageSmoothingEnabled=true; ctx.drawImage(noise,0,0,w,h); ctx.globalAlpha=1;
+    // linhas de varrimento
+    ctx.fillStyle="rgba(0,0,0,.12)"; for(let y=0;y<h;y+=3) ctx.fillRect(0,y,w,1);
+    // tubo circular
+    const R=Math.hypot(w,h)*.46; const vg=ctx.createRadialGradient(w/2,h/2,R*.55,w/2,h/2,R);
+    vg.addColorStop(0,"rgba(0,0,0,0)"); vg.addColorStop(.85,"rgba(0,0,0,.75)"); vg.addColorStop(1,"rgba(0,0,0,1)");
+    ctx.fillStyle=vg; ctx.fillRect(0,0,w,h);
+    // HUD
+    ctx.font=`600 ${Math.max(10,h*.035)}px ui-monospace,Menlo,monospace`; ctx.fillStyle="rgba(210,255,215,.85)";
+    ctx.fillText("NVG · GEN III · IR ON",14,22+h*.02);
+    const sec=Math.floor(t/1000), ts=`00:${String(Math.floor(sec/60)%60).padStart(2,"0")}:${String(sec%60).padStart(2,"0")}`;
+    ctx.textAlign="right"; ctx.fillText(ts,w-14,22+h*.02); ctx.textAlign="left";
+    if (Math.floor(t/600)%2===0){ ctx.fillStyle="#D71920"; ctx.beginPath(); ctx.arc(w-22,h-22,5,0,Math.PI*2); ctx.fill(); }
+    ctx.fillStyle="rgba(210,255,215,.85)"; ctx.textAlign="right"; ctx.fillText("REC",w-34,h-18); ctx.textAlign="left";
+    if (!reduce) raf=requestAnimationFrame(frame);
+  }
+  resize(); grain(); frame(performance.now()+8000);
+  return { cv, resize(){ resize(); if(reduce) frame(9000); }, stop(){ alive=false; cancelAnimationFrame(raf); } };
+}
+window.addEventListener("resize", ()=>{ if(S.view==="home") drawHero(); });
+
+/* ---------- Ligação à base de dados ---------- */
+function setBanner(t){ $("#banner").hidden=!t; $("#bannerTxt").textContent=t||""; }
+async function boot(){
+  if (MONTRA){
+    S.cfg={...DEFAULT_CFG, ...MONTRA.cfg}; S.produtos=MONTRA.produtos.map(x=>({...x, preco:num(x.preco), precoPromo:num(x.precoPromo), stock:num(x.stock)}));
+    S.loaded=true; S.canAdmin=false; S.static=true;
+    setBanner("Montra de demonstração da Viriatus Airsoft Store: os produtos são exemplos e as encomendas não são registadas.");
+    render(); return;
+  }
+  render();
+  if (!window.claude || typeof window.claude.use!=="function"){ S.loaded=true; setBanner("Pré-visualização sem ligação à base de dados: abre a loja publicada para ver e gerir os produtos."); render(); return; }
+  const [db, user] = await Promise.all([window.claude.use("db"), window.claude.use("user")]);
+  S.user=user;
+  if (!db){ S.loaded=true; setBanner("Não foi possível ligar à base de dados da loja nesta vista."); render(); return; }
+  S.db=db;
+  db.collection("produtos").onSnapshot(snap=>{
+    S.produtos = snap.docs.map(d=>{ const x=d.data(); return {...x, id:d.id, preco:num(x.preco), precoPromo:num(x.precoPromo), stock:Math.max(0,Math.round(num(x.stock)))}; });
+    S.loaded=true;
+    if (!snap.metadata.fromCache){ const n=S.cart.length; S.cart = S.cart.filter(l=>prod(l.id)); if (n!==S.cart.length) saveCart(); }
+    safeRender();
+  }, ()=>{ S.loaded=true; setBanner("A ligação aos produtos foi interrompida. Recarrega a página."); render(); });
+  db.doc("config/loja").onSnapshot(s=>{ S.cfg = {...DEFAULT_CFG, ...(s.exists?s.data():{})}; if(!Array.isArray(S.cfg.categorias)) S.cfg.categorias=DEFAULT_CFG.categorias; safeRender(); }, ()=>{});
+  if (user){
+    S.canAdmin = await user.canEdit();
+    if (S.canAdmin){
+      S.assets = await window.claude.use("assets");
+      db.collection("encomendas").onSnapshot(s=>{ S.encomendas = s.docs.map(d=>d.data()); safeRender(); }, ()=>{});
+    }
+    render();
+  }
+}
+function safeRender(){
+  // Não redesenhar por cima de formulários a meio do preenchimento
+  if (S.view==="checkout" || (S.view==="admin" && (S.edit || S.aTab==="config"))){ renderChrome(); if (S.cartOpen) renderCart(); return; }
+  const a=document.activeElement, id=a&&a.id, pos=a&&a.selectionStart;
+  render();
+  if (id){ const n=document.getElementById(id); if(n){ n.focus(); try{ if(pos!=null) n.setSelectionRange(pos,pos); }catch(e){} } }
+}
+boot();
+})();
+</script>
+
+</body>
+</html>
